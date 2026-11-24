@@ -16,7 +16,7 @@ PROJECTS = [
         "delay": "0.0s",
         "col": 0,
         "row": 0,
-        "spark": "M 0,10 Q 15,2 30,12 T 60,4 T 90,8"
+        "spark": "M 0,8 Q 20,2 40,8 T 80,6"
     },
     {
         "id": "02",
@@ -31,7 +31,7 @@ PROJECTS = [
         "delay": "0.4s",
         "col": 1,
         "row": 0,
-        "spark": "M 0,12 Q 18,3 36,10 T 68,2 T 90,9"
+        "spark": "M 0,9 Q 20,3 40,7 T 80,5"
     },
     {
         "id": "03",
@@ -46,7 +46,7 @@ PROJECTS = [
         "delay": "0.8s",
         "col": 0,
         "row": 1,
-        "spark": "M 0,8 Q 20,14 40,3 T 70,11 T 90,5"
+        "spark": "M 0,6 Q 20,11 40,4 T 80,8"
     },
     {
         "id": "04",
@@ -61,7 +61,7 @@ PROJECTS = [
         "delay": "1.2s",
         "col": 1,
         "row": 1,
-        "spark": "M 0,11 Q 22,2 45,13 T 75,4 T 90,8"
+        "spark": "M 0,8 Q 20,3 40,9 T 80,6"
     },
     {
         "id": "05",
@@ -76,7 +76,7 @@ PROJECTS = [
         "delay": "1.6s",
         "col": 0,
         "row": 2,
-        "spark": "M 0,6 Q 25,14 50,4 T 75,10 T 90,3"
+        "spark": "M 0,5 Q 20,11 40,4 T 80,7"
     },
     {
         "id": "06",
@@ -91,7 +91,7 @@ PROJECTS = [
         "delay": "2.0s",
         "col": 1,
         "row": 2,
-        "spark": "M 0,13 Q 18,4 42,9 T 72,2 T 90,11"
+        "spark": "M 0,9 Q 20,4 40,8 T 80,5"
     },
     {
         "id": "07",
@@ -106,7 +106,7 @@ PROJECTS = [
         "delay": "0.3s",
         "col": 0,
         "row": 3,
-        "spark": "M 0,9 Q 20,2 45,12 T 70,5 T 90,9"
+        "spark": "M 0,7 Q 20,2 40,9 T 80,6"
     },
     {
         "id": "08",
@@ -121,7 +121,7 @@ PROJECTS = [
         "delay": "0.7s",
         "col": 1,
         "row": 3,
-        "spark": "M 0,12 Q 24,4 48,11 T 76,3 T 90,7"
+        "spark": "M 0,9 Q 20,3 40,8 T 80,6"
     },
     {
         "id": "09",
@@ -136,7 +136,7 @@ PROJECTS = [
         "delay": "1.1s",
         "col": 0,
         "row": 4,
-        "spark": "M 0,7 Q 20,13 45,4 T 70,11 T 90,6"
+        "spark": "M 0,6 Q 20,10 40,4 T 80,7"
     },
     {
         "id": "10",
@@ -151,7 +151,7 @@ PROJECTS = [
         "delay": "1.5s",
         "col": 1,
         "row": 4,
-        "spark": "M 0,10 Q 15,3 35,12 T 65,4 T 90,10"
+        "spark": "M 0,8 Q 20,3 40,9 T 80,5"
     },
     {
         "id": "11",
@@ -166,7 +166,7 @@ PROJECTS = [
         "delay": "0.5s",
         "col": 0,
         "row": 5,
-        "spark": "M 0,8 Q 22,14 44,4 T 72,9 T 90,4"
+        "spark": "M 0,7 Q 20,11 40,4 T 80,8"
     },
     {
         "id": "12",
@@ -181,7 +181,7 @@ PROJECTS = [
         "delay": "0.9s",
         "col": 1,
         "row": 5,
-        "spark": "M 0,11 Q 25,3 50,12 T 75,4 T 90,9"
+        "spark": "M 0,8 Q 20,3 40,9 T 80,6"
     },
     {
         "id": "13",
@@ -196,7 +196,7 @@ PROJECTS = [
         "delay": "1.3s",
         "col": 0,
         "row": 6,
-        "spark": "M 0,7 Q 18,12 40,3 T 70,11 T 90,5"
+        "spark": "M 0,6 Q 20,10 40,3 T 80,7"
     },
     {
         "id": "14",
@@ -211,7 +211,7 @@ PROJECTS = [
         "delay": "1.7s",
         "col": 1,
         "row": 6,
-        "spark": "M 0,12 Q 22,4 45,10 T 72,3 T 90,8"
+        "spark": "M 0,9 Q 20,4 40,8 T 80,6"
     }
 ]
 
@@ -232,65 +232,70 @@ card_h = 130
 start_x = [34, 490]
 start_y = 310
 row_gap = 16
-svg_height = start_y + (7 * card_h) + (6 * row_gap) + 64  # 1318 + 64 = 1380
+svg_height = start_y + (7 * card_h) + (6 * row_gap) + 64
 
 defs = []
 
+# Clip Path for the chart wave (guarantees NO spill/overlap)
 defs.append('''
-  <!-- Background Pattern -->
+  <!-- Clip Path for wave chart: strictly confines drawing inside chart box -->
+  <clipPath id="chartClip">
+    <rect x="0" y="0" width="454" height="114" rx="4"/>
+  </clipPath>
+''')
+
+defs.append('''
+  <!-- Transparent Background Pattern -->
   <pattern id="techGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#101726" stroke-width="0.75" opacity="0.7"/>
-    <circle cx="24" cy="24" r="0.75" fill="#1e293b" opacity="0.85"/>
+    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1e293b" stroke-width="0.75" opacity="0.35"/>
+    <circle cx="24" cy="24" r="0.75" fill="#334155" opacity="0.4"/>
   </pattern>
 ''')
 
 defs.append('''
-  <!-- Ambient Glows -->
+  <!-- Ambient Glows with transparent fades -->
   <radialGradient id="topGlow" cx="50%" cy="0%" r="50%">
-    <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.14"/>
-    <stop offset="45%" stop-color="#6366f1" stop-opacity="0.05"/>
-    <stop offset="100%" stop-color="#05070c" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="waveGlow" cx="25%" cy="15%" r="35%">
-    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.12"/>
-    <stop offset="100%" stop-color="#05070c" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.12"/>
+    <stop offset="45%" stop-color="#6366f1" stop-opacity="0.04"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
   </radialGradient>
 ''')
 
 defs.append('''
   <!-- Chart Gradients -->
   <linearGradient id="waveFillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.32"/>
-    <stop offset="60%" stop-color="#00f2fe" stop-opacity="0.08"/>
+    <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.28"/>
+    <stop offset="70%" stop-color="#00f2fe" stop-opacity="0.05"/>
     <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
   </linearGradient>
 
   <linearGradient id="waveStrokeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="#38bdf8"/>
-    <stop offset="35%" stop-color="#00f2fe"/>
-    <stop offset="70%" stop-color="#818cf8"/>
+    <stop offset="30%" stop-color="#00f2fe"/>
+    <stop offset="65%" stop-color="#818cf8"/>
     <stop offset="100%" stop-color="#38bdf8"/>
   </linearGradient>
 
   <linearGradient id="scanlineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
-    <stop offset="30%" stop-color="#00f2fe" stop-opacity="0.4"/>
-    <stop offset="50%" stop-color="#a855f7" stop-opacity="0.9"/>
-    <stop offset="70%" stop-color="#00f2fe" stop-opacity="0.4"/>
+    <stop offset="30%" stop-color="#00f2fe" stop-opacity="0.35"/>
+    <stop offset="50%" stop-color="#a855f7" stop-opacity="0.8"/>
+    <stop offset="70%" stop-color="#00f2fe" stop-opacity="0.35"/>
     <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
   </linearGradient>
 
   <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#111827" stop-opacity="0.95"/>
-    <stop offset="100%" stop-color="#090d16" stop-opacity="0.95"/>
+    <stop offset="0%" stop-color="#0e1726" stop-opacity="0.85"/>
+    <stop offset="100%" stop-color="#080d17" stop-opacity="0.85"/>
   </linearGradient>
 ''')
 
+# Semi-transparent card gradients for clean theme blending
 for p in PROJECTS:
     defs.append(f'''
   <linearGradient id="cardGrad_{p['id']}" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#0c1220" stop-opacity="0.92"/>
-    <stop offset="100%" stop-color="#070a12" stop-opacity="0.98"/>
+    <stop offset="0%" stop-color="#0b1120" stop-opacity="0.8"/>
+    <stop offset="100%" stop-color="#070b14" stop-opacity="0.85"/>
   </linearGradient>
   <linearGradient id="beamGrad_{p['id']}" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="{p['accent']}" stop-opacity="0"/>
@@ -318,8 +323,8 @@ styles = '''
     .card-item:hover .card-box {
       stroke: #00f2fe !important;
       stroke-width: 1.5px !important;
-      fill: #0e1628 !important;
-      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.7));
+      fill-opacity: 0.95 !important;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
     }
     .card-item:hover .card-title {
       fill: #ffffff !important;
@@ -343,7 +348,7 @@ styles = '''
       transition: all 0.25s ease;
     }
     .badge-pill:hover rect {
-      fill-opacity: 0.25 !important;
+      fill-opacity: 0.4 !important;
       stroke-opacity: 0.8 !important;
     }
   </style>
@@ -354,7 +359,7 @@ top_bar_svg = '''
   <!-- TOP TELEMETRY CONSOLE BAR -->
   <g transform="translate(34, 22)">
     <!-- Left Status Capsule -->
-    <rect x="0" y="0" width="316" height="28" rx="14" fill="#090e18" stroke="#1a273f" stroke-width="1"/>
+    <rect x="0" y="0" width="316" height="28" rx="14" fill="#090e18" fill-opacity="0.8" stroke="#1f2c47" stroke-width="1"/>
     <circle cx="16" cy="14" r="3.5" fill="#10b981"/>
     <circle cx="16" cy="14" r="3.5" fill="#10b981" opacity="0.6">
       <animate attributeName="r" values="3.5;8;3.5" dur="2s" repeatCount="indefinite"/>
@@ -365,8 +370,8 @@ top_bar_svg = '''
     </text>
 
     <!-- Center System Signal Indicator -->
-    <g transform="translate(328, 6)">
-      <rect x="0" y="0" width="138" height="28" rx="14" fill="#090e18" stroke="#1a273f" stroke-width="1"/>
+    <g transform="translate(328, 0)">
+      <rect x="0" y="0" width="138" height="28" rx="14" fill="#090e18" fill-opacity="0.8" stroke="#1f2c47" stroke-width="1"/>
       <circle cx="14" cy="14" r="3" fill="#00f2fe"/>
       <text x="24" y="18" class="font-mono" font-size="9" font-weight="600" fill="#38bdf8" letter-spacing="0.5">
         DISPATCH: REALTIME
@@ -377,7 +382,7 @@ top_bar_svg = '''
     <g transform="translate(480, 0)">
       <!-- GitHub -->
       <a xlink:href="https://github.com/saadali122gb" href="https://github.com/saadali122gb" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <rect x="0" y="0" width="128" height="28" rx="14" fill="url(#btnGrad)" stroke="#1a273f" stroke-width="1"/>
+        <rect x="0" y="0" width="128" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
         <path d="M12 7C8.68 7 6 9.68 6 13c0 2.65 1.72 4.9 4.1 5.69.3.05.41-.13.41-.29 0-.14 0-.61 0-1.12-1.51.28-1.9-.37-2.02-.7-.07-.17-.36-.7-.61-.85-.21-.11-.51-.39-.01-.4.47-.01.81.43.92.61.54.91 1.4.65 1.75.5.05-.39.21-.65.38-.8-1.34-.15-2.73-.67-2.73-2.96 0-.65.23-1.19.61-1.61-.06-.15-.27-.77.06-1.59 0 0 .5-.16 1.65.61.48-.13.99-.2 1.5-.2.51 0 1.02.07 1.5.2 1.15-.78 1.65-.61 1.65-.61.33.82.12 1.44.06 1.59.38.42.61.96.61 1.61 0 2.3-1.4 2.81-2.74 2.96.22.19.41.55.41 1.11 0 .8-.01 1.45-.01 1.65 0 .16.11.35.41.29A7.01 7.01 0 0 0 18 13c0-3.32-2.68-6-6-6z" fill="#f8fafc"/>
         <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">GitHub</text>
         <text x="70" y="18" class="font-mono" font-size="9" fill="#64748b">profile ↗</text>
@@ -386,7 +391,7 @@ top_bar_svg = '''
       <!-- LinkedIn -->
       <a xlink:href="https://www.linkedin.com/in/saad-rana-64a285320/" href="https://www.linkedin.com/in/saad-rana-64a285320/" target="_blank" rel="noopener noreferrer" class="social-btn">
         <g transform="translate(136, 0)">
-          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1a273f" stroke-width="1"/>
+          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
           <path d="M9 7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1.3 2.3h2.6V17H7.7V9.8zm4.7 0h2.5v1.1h.04c.35-.66 1.2-1.36 2.48-1.36 2.65 0 3.14 1.74 3.14 4V17H18v-3.4c0-.81-.02-1.85-1.13-1.85-1.13 0-1.3.88-1.3 1.79V17h-2.6V9.8z" fill="#38bdf8"/>
           <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">LinkedIn</text>
           <text x="78" y="18" class="font-mono" font-size="9" fill="#64748b">connect ↗</text>
@@ -396,7 +401,7 @@ top_bar_svg = '''
       <!-- Email -->
       <a xlink:href="mailto:saadali122gb@gmail.com" href="mailto:saadali122gb@gmail.com" target="_blank" rel="noopener noreferrer" class="social-btn">
         <g transform="translate(278, 0)">
-          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1a273f" stroke-width="1"/>
+          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
           <path d="M8 7h10c.8 0 1.5.7 1.5 1.5v9c0 .8-.7 1.5-1.5 1.5H8c-.8 0-1.5-.7-1.5-1.5v-9C6.5 7.7 7.2 7 8 7zm0 1.5v.4l5 3.1 5-3.1v-.4H8zm10 9v-6.8l-4.6 2.8c-.2.1-.6.1-.8 0L8 10.7V17.5h10z" fill="#f43f5e"/>
           <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">Email</text>
           <text x="64" y="18" class="font-mono" font-size="9" fill="#64748b">contact ↗</text>
@@ -407,11 +412,12 @@ top_bar_svg = '''
 '''
 
 # 2. GRAPHICAL DASHBOARD SECTION (CONTRIBUTION CURVE + METRIC GAUGES)
+# Notice: Smooth Cubic Bezier strictly bounded between Y=20 and Y=88 inside chartClip
 graphical_section_svg = '''
   <!-- SECTION A: CONTRIBUTION & ACTIVITY WAVEFORM (GRAPHICAL CHART) -->
   <g transform="translate(34, 62)">
-    <!-- Container Card -->
-    <rect x="0" y="0" width="490" height="172" rx="12" fill="#080c16" stroke="#162238" stroke-width="1"/>
+    <!-- Container Card (Transparent glass) -->
+    <rect x="0" y="0" width="490" height="172" rx="12" fill="#080c16" fill-opacity="0.8" stroke="#1a273f" stroke-width="1"/>
     
     <!-- Header -->
     <g transform="translate(18, 22)">
@@ -424,62 +430,62 @@ graphical_section_svg = '''
       </text>
     </g>
 
-    <!-- Grid Lines (Subtle) -->
-    <g transform="translate(18, 38)" opacity="0.35">
-      <line x1="0" y1="20" x2="454" y2="20" stroke="#1e293b" stroke-dasharray="2 3"/>
-      <line x1="0" y1="45" x2="454" y2="45" stroke="#1e293b" stroke-dasharray="2 3"/>
-      <line x1="0" y1="70" x2="454" y2="70" stroke="#1e293b" stroke-dasharray="2 3"/>
-      <line x1="0" y1="95" x2="454" y2="95" stroke="#1e293b"/>
-    </g>
+    <!-- Chart Drawing Area (Strictly Clipped with #chartClip) -->
+    <g transform="translate(18, 38)" clip-path="url(#chartClip)">
+      <!-- Grid Lines (Subtle) -->
+      <g opacity="0.35">
+        <line x1="0" y1="20" x2="454" y2="20" stroke="#1e293b" stroke-dasharray="2 3"/>
+        <line x1="0" y1="45" x2="454" y2="45" stroke="#1e293b" stroke-dasharray="2 3"/>
+        <line x1="0" y1="68" x2="454" y2="68" stroke="#1e293b" stroke-dasharray="2 3"/>
+        <line x1="0" y1="90" x2="454" y2="90" stroke="#1e293b"/>
+      </g>
 
-    <!-- Spline Curve & Filled Area -->
-    <g transform="translate(18, 38)">
-      <!-- Underneath Gradient Fill -->
-      <path d="M 0,95 L 0,86 Q 30,86 46,65 T 84,24 T 120,90 T 156,42 T 194,80 T 232,18 T 270,72 T 308,34 T 346,88 T 384,54 T 422,76 L 454,72 L 454,95 Z" 
+      <!-- Underneath Gradient Fill (Bounded cubic bezier) -->
+      <path d="M 0,90 L 0,80 C 15,80 30,45 45,45 C 60,45 75,75 90,75 C 105,75 120,35 135,35 C 150,35 165,70 180,70 C 195,70 215,20 230,20 C 245,20 265,65 280,65 C 295,65 315,30 330,30 C 345,30 365,72 380,72 C 405,72 430,55 454,55 L 454,90 Z" 
             fill="url(#waveFillGrad)"/>
       
       <!-- Main Glowing Wave Stroke -->
-      <path d="M 0,86 Q 30,86 46,65 T 84,24 T 120,90 T 156,42 T 194,80 T 232,18 T 270,72 T 308,34 T 346,88 T 384,54 T 422,76 L 454,72" 
+      <path d="M 0,80 C 15,80 30,45 45,45 C 60,45 75,75 90,75 C 105,75 120,35 135,35 C 150,35 165,70 180,70 C 195,70 215,20 230,20 C 245,20 265,65 280,65 C 295,65 315,30 330,30 C 345,30 365,72 380,72 C 405,72 430,55 454,55" 
             fill="none" stroke="url(#waveStrokeGrad)" stroke-width="2.6" stroke-linecap="round"/>
 
-      <!-- Glowing Data Nodes at Wave Peaks -->
-      <!-- Peak 1 -->
-      <circle cx="84" cy="24" r="3.5" fill="#f8fafc" stroke="#00f2fe" stroke-width="2"/>
-      <circle cx="84" cy="24" r="6" fill="#00f2fe" opacity="0.3">
-        <animate attributeName="r" values="4;8;4" dur="2.4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.4;0;0.4" dur="2.4s" repeatCount="indefinite"/>
-      </circle>
+      <!-- Glowing Data Nodes at Wave Peaks (Strictly bounded) -->
+      <!-- Node 1 -->
+      <circle cx="45" cy="45" r="3" fill="#f8fafc" stroke="#00f2fe" stroke-width="1.8"/>
+      
+      <!-- Node 2 -->
+      <circle cx="135" cy="35" r="3" fill="#f8fafc" stroke="#00f2fe" stroke-width="1.8"/>
 
-      <!-- Peak 2 (Highest) -->
-      <circle cx="232" cy="18" r="4" fill="#f8fafc" stroke="#00f2fe" stroke-width="2.5"/>
-      <circle cx="232" cy="18" r="8" fill="#00f2fe" opacity="0.35">
-        <animate attributeName="r" values="5;11;5" dur="2s" repeatCount="indefinite"/>
+      <!-- Node 3 (Highest Peak at 230,20) -->
+      <circle cx="230" cy="20" r="3.8" fill="#f8fafc" stroke="#00f2fe" stroke-width="2.2"/>
+      <circle cx="230" cy="20" r="7.5" fill="#00f2fe" opacity="0.35">
+        <animate attributeName="r" values="4;9;4" dur="2s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
       </circle>
 
-      <!-- Peak 3 -->
-      <circle cx="308" cy="34" r="3.5" fill="#f8fafc" stroke="#818cf8" stroke-width="2"/>
+      <!-- Node 4 -->
+      <circle cx="330" cy="30" r="3" fill="#f8fafc" stroke="#818cf8" stroke-width="1.8"/>
       <!-- Other nodes -->
-      <circle cx="46" cy="65" r="2.5" fill="#38bdf8"/>
-      <circle cx="156" cy="42" r="2.5" fill="#00f2fe"/>
-      <circle cx="384" cy="54" r="2.5" fill="#818cf8"/>
-      <circle cx="454" cy="72" r="2.5" fill="#38bdf8"/>
+      <circle cx="90" cy="75" r="2.2" fill="#38bdf8"/>
+      <circle cx="180" cy="70" r="2.2" fill="#00f2fe"/>
+      <circle cx="280" cy="65" r="2.2" fill="#818cf8"/>
+      <circle cx="380" cy="72" r="2.2" fill="#38bdf8"/>
+      <circle cx="454" cy="55" r="2.5" fill="#00f2fe"/>
+    </g>
 
-      <!-- Timeline Days below curve -->
-      <g transform="translate(0, 114)" class="font-mono" font-size="8.5" fill="#64748b">
-        <text x="0" y="0">DAY 01</text>
-        <text x="80" y="0">DAY 07</text>
-        <text x="160" y="0">DAY 14</text>
-        <text x="232" y="0">DAY 21 (PEAK)</text>
-        <text x="320" y="0">DAY 28</text>
-        <text x="454" y="0" text-anchor="end">CURRENT</text>
-      </g>
+    <!-- Timeline Days below curve -->
+    <g transform="translate(18, 148)" class="font-mono" font-size="8.5" fill="#64748b">
+      <text x="0" y="0">DAY 01</text>
+      <text x="80" y="0">DAY 07</text>
+      <text x="160" y="0">DAY 14</text>
+      <text x="230" y="0">DAY 21 (PEAK)</text>
+      <text x="320" y="0">DAY 28</text>
+      <text x="454" y="0" text-anchor="end">CURRENT</text>
     </g>
   </g>
 
   <!-- SECTION B: PERFORMANCE METRIC GAUGES & LANGUAGE DISTRIBUTION -->
   <g transform="translate(538, 62)">
-    <rect x="0" y="0" width="388" height="172" rx="12" fill="#080c16" stroke="#162238" stroke-width="1"/>
+    <rect x="0" y="0" width="388" height="172" rx="12" fill="#080c16" fill-opacity="0.8" stroke="#1a273f" stroke-width="1"/>
     
     <!-- Title -->
     <g transform="translate(18, 22)">
@@ -489,7 +495,7 @@ graphical_section_svg = '''
       </text>
     </g>
 
-    <!-- 4 Circular Score Gauges (Like Reference Image 2) -->
+    <!-- 4 Circular Score Gauges -->
     <g transform="translate(16, 42)">
       <!-- Gauge 1: Performance -->
       <g transform="translate(36, 26)">
@@ -500,7 +506,7 @@ graphical_section_svg = '''
         <text x="0" y="36" text-anchor="middle" class="font-sans" font-size="8.5" font-weight="600" fill="#94a3b8">Performance</text>
       </g>
 
-      <!-- Gauge 2: Accessibility / RBAC -->
+      <!-- Gauge 2: Security/RBAC -->
       <g transform="translate(126, 26)">
         <circle cx="0" cy="0" r="22" fill="none" stroke="#162238" stroke-width="3.5"/>
         <circle cx="0" cy="0" r="22" fill="none" stroke="#10b981" stroke-width="3.5"
@@ -528,7 +534,7 @@ graphical_section_svg = '''
       </g>
     </g>
 
-    <!-- Language & Stack Distribution Bar (Like Reference Image 2) -->
+    <!-- Language & Stack Distribution Bar -->
     <g transform="translate(18, 126)">
       <text x="0" y="-4" class="font-mono" font-size="8.5" font-weight="700" fill="#64748b" letter-spacing="0.5">
         STACK DISTRIBUTION
@@ -555,14 +561,14 @@ graphical_section_svg = '''
   </g>
 '''
 
-# 3. MASTER TECHNOLOGY BADGES ROW (User requested: "muja badge bhi chahiya koi bhi ho wo muja add krna ha")
+# 3. MASTER TECHNOLOGY BADGES ROW
 badges_list_svg = []
 cur_bx = 34
 for b_name, b_col in TECH_BADGES:
     bw = len(b_name) * 6.5 + 24
     badge_str = f'''
     <g transform="translate({cur_bx}, 248)" class="badge-pill">
-      <rect x="0" y="0" width="{bw}" height="24" rx="6" fill="#090e18" stroke="{b_col}" stroke-opacity="0.3" stroke-width="0.9"/>
+      <rect x="0" y="0" width="{bw}" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="{b_col}" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="{b_col}"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="{b_col}" letter-spacing="0.5">
         {escape(b_name)}
@@ -592,7 +598,7 @@ divider_svg = '''
   </g>
 '''
 
-# 5. ENHANCED 14 PROJECT CARDS (With corner brackets, animated equalizers/sparklines, distinct accents)
+# 5. ENHANCED 14 PROJECT CARDS
 cards_svg = []
 for p in PROJECTS:
     cx = start_x[p['col']]
@@ -607,7 +613,7 @@ for p in PROJECTS:
   <!-- CARD {cid}: {p['name']} -->
   <g transform="translate({cx}, {cy})" class="card-item">
     <a xlink:href="{p['url']}" href="{p['url']}" target="_blank" rel="noopener noreferrer">
-      <!-- Card Base Box -->
+      <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="{card_w}" height="{card_h}" rx="10" 
             fill="url(#cardGrad_{cid})" stroke="#172236" stroke-width="1"/>
 
@@ -622,10 +628,8 @@ for p in PROJECTS:
         <animate attributeName="x" values="0;{card_w - 90};0" dur="{dur}" begin="{delay}" repeatCount="indefinite"/>
       </rect>
 
-      <!-- Cyber Corner Brackets (High-Craft Graphic Markings) -->
-      <!-- Top-Left Bracket -->
+      <!-- Cyber Corner Brackets -->
       <path d="M 6,14 L 6,6 L 14,6" fill="none" stroke="{accent}" stroke-width="1.2" opacity="0.6"/>
-      <!-- Bottom-Right Bracket -->
       <path d="M {card_w - 6},{card_h - 14} L {card_w - 6},{card_h - 6} L {card_w - 14},{card_h - 6}" 
             fill="none" stroke="{accent}" stroke-width="1.2" opacity="0.6"/>
 
@@ -674,7 +678,7 @@ for p in PROJECTS:
           {escape(p['tag'])}
         </text>
 
-        <!-- Mini Telemetry Sparkline Curve -->
+        <!-- Mini Telemetry Sparkline Curve (Bounded) -->
         <g transform="translate({card_w - 146}, 4)" opacity="0.55">
           <path d="{p['spark']}" fill="none" stroke="{accent}" stroke-width="1.4" stroke-linecap="round"/>
         </g>
@@ -711,9 +715,9 @@ cards_content = "\n".join(cards_svg)
 # 6. FOOTER BAR
 footer_y = svg_height - 52
 footer_svg = f'''
-  <!-- FOOTER STATUS CONSOLE -->
+  <!-- FOOTER STATUS CONSOLE (Transparent) -->
   <g transform="translate(34, {footer_y})">
-    <rect x="0" y="0" width="892" height="36" rx="8" fill="#080c16" stroke="#162238" stroke-width="1"/>
+    <rect x="0" y="0" width="892" height="36" rx="8" fill="#080c16" fill-opacity="0.8" stroke="#162238" stroke-width="1"/>
     
     <!-- Status Terminal Dot -->
     <circle cx="18" cy="18" r="4" fill="#10b981"/>
@@ -742,23 +746,23 @@ footer_svg = f'''
 
 scanline_svg = f'''
   <!-- Subtle Ambient Scanline traversing vertically -->
-  <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.18">
+  <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.16">
     <animate attributeName="y1" values="0;{svg_height};0" dur="10s" repeatCount="indefinite"/>
     <animate attributeName="y2" values="0;{svg_height};0" dur="10s" repeatCount="indefinite"/>
   </line>
 '''
 
+# ENTIRE SVG WITH FULLY TRANSPARENT BACKGROUND
 full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
      viewBox="0 0 {svg_width} {svg_height}" width="100%" height="100%"
-     style="background: #05070c; text-rendering: geometricPrecision; shape-rendering: geometricPrecision;">
+     style="background: transparent; text-rendering: geometricPrecision; shape-rendering: geometricPrecision;">
   <defs>
 {defs_content}
   </defs>
 
 {styles}
 
-  <!-- BACKGROUND RECT & GRID -->
-  <rect width="{svg_width}" height="{svg_height}" fill="#05070c"/>
+  <!-- TRANSPARENT GRID PATTERN OVERLAY -->
   <rect width="{svg_width}" height="{svg_height}" fill="url(#techGrid)"/>
 
   <!-- AMBIENT LIGHTING OVERLAYS -->
