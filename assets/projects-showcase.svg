@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-     viewBox="0 0 960 1380" width="100%" height="100%"
+     viewBox="0 0 960 1338" width="100%" height="100%"
      style="background: transparent; text-rendering: geometricPrecision; shape-rendering: geometricPrecision;">
   <defs>
 
@@ -234,17 +234,6 @@
       fill: #1e293b !important;
       stroke-opacity: 0.9 !important;
     }
-    .social-btn {
-      transition: all 0.25s ease;
-      cursor: pointer;
-    }
-    .social-btn:hover rect {
-      fill: #162238 !important;
-      stroke: #00f2fe !important;
-    }
-    .social-btn:hover text {
-      fill: #00f2fe !important;
-    }
     .badge-pill {
       transition: all 0.25s ease;
     }
@@ -256,7 +245,7 @@
 
 
   <!-- TRANSPARENT GRID PATTERN OVERLAY -->
-  <rect width="960" height="1380" fill="url(#techGrid)" pointer-events="none"/>
+  <rect width="960" height="1338" fill="url(#techGrid)" pointer-events="none"/>
 
   <!-- AMBIENT LIGHTING OVERLAYS -->
   <rect width="960" height="500" fill="url(#topGlow)" pointer-events="none"/>
@@ -264,70 +253,14 @@
 
   <!-- Subtle Ambient Scanline traversing vertically -->
   <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.16" pointer-events="none">
-    <animate attributeName="y1" values="0;1380;0" dur="10s" repeatCount="indefinite"/>
-    <animate attributeName="y2" values="0;1380;0" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="y1" values="0;1338;0" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="0;1338;0" dur="10s" repeatCount="indefinite"/>
   </line>
 
 
 
-  <!-- TOP TELEMETRY CONSOLE BAR -->
-  <g transform="translate(34, 22)">
-    <!-- Left Status Capsule -->
-    <rect x="0" y="0" width="316" height="28" rx="14" fill="#090e18" fill-opacity="0.8" stroke="#1f2c47" stroke-width="1"/>
-    <circle cx="16" cy="14" r="3.5" fill="#10b981"/>
-    <circle cx="16" cy="14" r="3.5" fill="#10b981" opacity="0.6">
-      <animate attributeName="r" values="3.5;8;3.5" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="28" y="18" class="font-mono" font-size="9.5" font-weight="700" fill="#94a3b8" letter-spacing="1">
-      SYSTEM MATRIX // 14 SERVICES ONLINE
-    </text>
-
-    <!-- Center System Signal Indicator -->
-    <g transform="translate(328, 0)">
-      <rect x="0" y="0" width="138" height="28" rx="14" fill="#090e18" fill-opacity="0.8" stroke="#1f2c47" stroke-width="1"/>
-      <circle cx="14" cy="14" r="3" fill="#00f2fe"/>
-      <text x="24" y="18" class="font-mono" font-size="9" font-weight="600" fill="#38bdf8" letter-spacing="0.5">
-        DISPATCH: REALTIME
-      </text>
-    </g>
-
-    <!-- Right Clickable Social Actions (STRICT: NO WEBSITE) -->
-    <g transform="translate(480, 0)">
-      <!-- GitHub -->
-      <a xlink:href="https://github.com/saadali122gb" href="https://github.com/saadali122gb" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <rect x="0" y="0" width="128" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-        <path d="M12 7C8.68 7 6 9.68 6 13c0 2.65 1.72 4.9 4.1 5.69.3.05.41-.13.41-.29 0-.14 0-.61 0-1.12-1.51.28-1.9-.37-2.02-.7-.07-.17-.36-.7-.61-.85-.21-.11-.51-.39-.01-.4.47-.01.81.43.92.61.54.91 1.4.65 1.75.5.05-.39.21-.65.38-.8-1.34-.15-2.73-.67-2.73-2.96 0-.65.23-1.19.61-1.61-.06-.15-.27-.77.06-1.59 0 0 .5-.16 1.65.61.48-.13.99-.2 1.5-.2.51 0 1.02.07 1.5.2 1.15-.78 1.65-.61 1.65-.61.33.82.12 1.44.06 1.59.38.42.61.96.61 1.61 0 2.3-1.4 2.81-2.74 2.96.22.19.41.55.41 1.11 0 .8-.01 1.45-.01 1.65 0 .16.11.35.41.29A7.01 7.01 0 0 0 18 13c0-3.32-2.68-6-6-6z" fill="#f8fafc"/>
-        <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">GitHub</text>
-        <text x="70" y="18" class="font-mono" font-size="9" fill="#64748b">profile ↗</text>
-      </a>
-
-      <!-- LinkedIn -->
-      <a xlink:href="https://www.linkedin.com/in/saad-rana-64a285320/" href="https://www.linkedin.com/in/saad-rana-64a285320/" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <g transform="translate(136, 0)">
-          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-          <path d="M9 7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1.3 2.3h2.6V17H7.7V9.8zm4.7 0h2.5v1.1h.04c.35-.66 1.2-1.36 2.48-1.36 2.65 0 3.14 1.74 3.14 4V17H18v-3.4c0-.81-.02-1.85-1.13-1.85-1.13 0-1.3.88-1.3 1.79V17h-2.6V9.8z" fill="#38bdf8"/>
-          <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">LinkedIn</text>
-          <text x="78" y="18" class="font-mono" font-size="9" fill="#64748b">connect ↗</text>
-        </g>
-      </a>
-
-      <!-- Email -->
-      <a xlink:href="mailto:saadali122gb@gmail.com" href="mailto:saadali122gb@gmail.com" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <g transform="translate(278, 0)">
-          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-          <path d="M8 7h10c.8 0 1.5.7 1.5 1.5v9c0 .8-.7 1.5-1.5 1.5H8c-.8 0-1.5-.7-1.5-1.5v-9C6.5 7.7 7.2 7 8 7zm0 1.5v.4l5 3.1 5-3.1v-.4H8zm10 9v-6.8l-4.6 2.8c-.2.1-.6.1-.8 0L8 10.7V17.5h10z" fill="#f43f5e"/>
-          <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">Email</text>
-          <text x="64" y="18" class="font-mono" font-size="9" fill="#64748b">contact ↗</text>
-        </g>
-      </a>
-    </g>
-  </g>
-
-
-
   <!-- SECTION A: CONTRIBUTION & ACTIVITY WAVEFORM (GRAPHICAL CHART) -->
-  <g transform="translate(34, 62)">
+  <g transform="translate(34, 20)">
     <!-- Container Card (Transparent glass) -->
     <rect x="0" y="0" width="490" height="172" rx="12" fill="#080c16" fill-opacity="0.8" stroke="#1a273f" stroke-width="1"/>
     
@@ -361,10 +294,7 @@
             fill="none" stroke="url(#waveStrokeGrad)" stroke-width="2.6" stroke-linecap="round"/>
 
       <!-- Glowing Data Nodes at Wave Peaks (Strictly bounded) -->
-      <!-- Node 1 -->
       <circle cx="45" cy="45" r="3" fill="#f8fafc" stroke="#00f2fe" stroke-width="1.8"/>
-      
-      <!-- Node 2 -->
       <circle cx="135" cy="35" r="3" fill="#f8fafc" stroke="#00f2fe" stroke-width="1.8"/>
 
       <!-- Node 3 (Highest Peak at 230,20) -->
@@ -374,9 +304,7 @@
         <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
       </circle>
 
-      <!-- Node 4 -->
       <circle cx="330" cy="30" r="3" fill="#f8fafc" stroke="#818cf8" stroke-width="1.8"/>
-      <!-- Other nodes -->
       <circle cx="90" cy="75" r="2.2" fill="#38bdf8"/>
       <circle cx="180" cy="70" r="2.2" fill="#00f2fe"/>
       <circle cx="280" cy="65" r="2.2" fill="#818cf8"/>
@@ -396,7 +324,7 @@
   </g>
 
   <!-- SECTION B: PERFORMANCE METRIC GAUGES & LANGUAGE DISTRIBUTION -->
-  <g transform="translate(538, 62)">
+  <g transform="translate(538, 20)">
     <rect x="0" y="0" width="388" height="172" rx="12" fill="#080c16" fill-opacity="0.8" stroke="#1a273f" stroke-width="1"/>
     
     <!-- Title -->
@@ -451,18 +379,12 @@
       <text x="0" y="-4" class="font-mono" font-size="8.5" font-weight="700" fill="#64748b" letter-spacing="0.5">
         STACK DISTRIBUTION
       </text>
-      <!-- Multi-Color Progress Bar -->
       <rect x="0" y="4" width="352" height="7" rx="3.5" fill="#1e293b"/>
-      <!-- TypeScript / JS (38%) -->
       <rect x="0" y="4" width="134" height="7" rx="3.5" fill="#38bdf8"/>
-      <!-- Python / FastAPI (28%) -->
       <rect x="136" y="4" width="98" height="7" rx="2" fill="#00f2fe"/>
-      <!-- C# / .NET (22%) -->
       <rect x="236" y="4" width="76" height="7" rx="2" fill="#a855f7"/>
-      <!-- Spatial GIS / SQL (12%) -->
       <rect x="314" y="4" width="38" height="7" rx="2" fill="#10b981"/>
 
-      <!-- Legend -->
       <g transform="translate(0, 24)" class="font-mono" font-size="8" fill="#94a3b8">
         <circle cx="4" cy="-3" r="3" fill="#38bdf8"/><text x="11" y="0">TypeScript 38%</text>
         <circle cx="100" cy="-3" r="3" fill="#00f2fe"/><text x="107" y="0">Python 28%</text>
@@ -474,7 +396,7 @@
 
 
 
-    <g transform="translate(34, 248)" class="badge-pill">
+    <g transform="translate(34, 206)" class="badge-pill">
       <rect x="0" y="0" width="89.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#00f2fe" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#00f2fe"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#00f2fe" letter-spacing="0.5">
@@ -483,7 +405,7 @@
     </g>
 
 
-    <g transform="translate(133, 248)" class="badge-pill">
+    <g transform="translate(133, 206)" class="badge-pill">
       <rect x="0" y="0" width="82.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#818cf8" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#818cf8"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#818cf8" letter-spacing="0.5">
@@ -492,7 +414,7 @@
     </g>
 
 
-    <g transform="translate(225, 248)" class="badge-pill">
+    <g transform="translate(225, 206)" class="badge-pill">
       <rect x="0" y="0" width="128.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#38bdf8"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#38bdf8" letter-spacing="0.5">
@@ -501,7 +423,7 @@
     </g>
 
 
-    <g transform="translate(363, 248)" class="badge-pill">
+    <g transform="translate(363, 206)" class="badge-pill">
       <rect x="0" y="0" width="121.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#a855f7" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#a855f7"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#a855f7" letter-spacing="0.5">
@@ -510,7 +432,7 @@
     </g>
 
 
-    <g transform="translate(494, 248)" class="badge-pill">
+    <g transform="translate(494, 206)" class="badge-pill">
       <rect x="0" y="0" width="147.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#f59e0b"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#f59e0b" letter-spacing="0.5">
@@ -519,7 +441,7 @@
     </g>
 
 
-    <g transform="translate(651, 248)" class="badge-pill">
+    <g transform="translate(651, 206)" class="badge-pill">
       <rect x="0" y="0" width="128.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#10b981" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#10b981"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#10b981" letter-spacing="0.5">
@@ -528,7 +450,7 @@
     </g>
 
 
-    <g transform="translate(789, 248)" class="badge-pill">
+    <g transform="translate(789, 206)" class="badge-pill">
       <rect x="0" y="0" width="115.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#06b6d4"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#06b6d4" letter-spacing="0.5">
@@ -537,7 +459,7 @@
     </g>
 
 
-    <g transform="translate(914, 248)" class="badge-pill">
+    <g transform="translate(914, 206)" class="badge-pill">
       <rect x="0" y="0" width="95.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#f43f5e" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="#f43f5e"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#f43f5e" letter-spacing="0.5">
@@ -548,7 +470,7 @@
 
 
   <!-- SECTION DIVIDER WITH MOVING LIGHT PULSE -->
-  <g transform="translate(34, 288)">
+  <g transform="translate(34, 246)">
     <line x1="0" y1="0" x2="892" y2="0" stroke="#162238" stroke-width="1"/>
     <!-- Animated Light Runner on Divider -->
     <rect x="0" y="-1" width="160" height="2" fill="url(#scanlineGrad)">
@@ -565,7 +487,7 @@
 
 
   <!-- CARD 01: Agentex Platform -->
-  <g transform="translate(34, 310)" class="card-item">
+  <g transform="translate(34, 268)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/agentix-platform" href="https://github.com/saadali122gb/agentix-platform" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -664,7 +586,7 @@
 
 
   <!-- CARD 02: MoveOn CRM -->
-  <g transform="translate(490, 310)" class="card-item">
+  <g transform="translate(490, 268)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/CRM" href="https://github.com/saadali122gb/CRM" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -763,7 +685,7 @@
 
 
   <!-- CARD 03: Taxi Dispatcher -->
-  <g transform="translate(34, 456)" class="card-item">
+  <g transform="translate(34, 414)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Taxi-Dispatcher" href="https://github.com/saadali122gb/Taxi-Dispatcher" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -862,7 +784,7 @@
 
 
   <!-- CARD 04: Hexa AI -->
-  <g transform="translate(490, 456)" class="card-item">
+  <g transform="translate(490, 414)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Hexa-AI" href="https://github.com/saadali122gb/Hexa-AI" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -961,7 +883,7 @@
 
 
   <!-- CARD 05: MoveOn Resumator -->
-  <g transform="translate(34, 602)" class="card-item">
+  <g transform="translate(34, 560)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/MoveOn" href="https://github.com/saadali122gb/MoveOn" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1060,7 +982,7 @@
 
 
   <!-- CARD 06: Cora AI Assistant -->
-  <g transform="translate(490, 602)" class="card-item">
+  <g transform="translate(490, 560)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Cora-AI-Assisstant-By-MoveOn-AI" href="https://github.com/saadali122gb/Cora-AI-Assisstant-By-MoveOn-AI" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1159,7 +1081,7 @@
 
 
   <!-- CARD 07: Orion Dispatch -->
-  <g transform="translate(34, 748)" class="card-item">
+  <g transform="translate(34, 706)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Orion-Dispatch-Truck-Dispatch-" href="https://github.com/saadali122gb/Orion-Dispatch-Truck-Dispatch-" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1258,7 +1180,7 @@
 
 
   <!-- CARD 08: Rawana Cargo -->
-  <g transform="translate(490, 748)" class="card-item">
+  <g transform="translate(490, 706)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Rawana-Cargo-For-Truck-Logistics-" href="https://github.com/saadali122gb/Rawana-Cargo-For-Truck-Logistics-" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1357,7 +1279,7 @@
 
 
   <!-- CARD 09: Data Saver -->
-  <g transform="translate(34, 894)" class="card-item">
+  <g transform="translate(34, 852)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Data-Saver-By-Moveon-AI" href="https://github.com/saadali122gb/Data-Saver-By-Moveon-AI" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1456,7 +1378,7 @@
 
 
   <!-- CARD 10: Connector -->
-  <g transform="translate(490, 894)" class="card-item">
+  <g transform="translate(490, 852)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Connector-by-moveon" href="https://github.com/saadali122gb/Connector-by-moveon" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1555,7 +1477,7 @@
 
 
   <!-- CARD 11: FixGhar -->
-  <g transform="translate(34, 1040)" class="card-item">
+  <g transform="translate(34, 998)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Service-Provider-Company-Fix-Ghar-" href="https://github.com/saadali122gb/Service-Provider-Company-Fix-Ghar-" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1654,7 +1576,7 @@
 
 
   <!-- CARD 12: FixGuard Security -->
-  <g transform="translate(490, 1040)" class="card-item">
+  <g transform="translate(490, 998)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Fixguard-Security-LTD" href="https://github.com/saadali122gb/Fixguard-Security-LTD" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1753,7 +1675,7 @@
 
 
   <!-- CARD 13: Healthcare Entry -->
-  <g transform="translate(34, 1186)" class="card-item">
+  <g transform="translate(34, 1144)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Health-Care-Data-Entry-Software" href="https://github.com/saadali122gb/Health-Care-Data-Entry-Software" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1852,7 +1774,7 @@
 
 
   <!-- CARD 14: PC Antivirus -->
-  <g transform="translate(490, 1186)" class="card-item">
+  <g transform="translate(490, 1144)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Anti-Virus-Software-For-PC" href="https://github.com/saadali122gb/Anti-Virus-Software-For-PC" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1952,7 +1874,7 @@
 
 
   <!-- FOOTER STATUS CONSOLE (Transparent) -->
-  <g transform="translate(34, 1328)">
+  <g transform="translate(34, 1286)">
     <rect x="0" y="0" width="892" height="36" rx="8" fill="#080c16" fill-opacity="0.8" stroke="#162238" stroke-width="1"/>
     
     <!-- Status Terminal Dot -->

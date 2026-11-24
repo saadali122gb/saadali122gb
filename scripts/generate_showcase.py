@@ -230,13 +230,12 @@ svg_width = 960
 card_w = 436
 card_h = 130
 start_x = [34, 490]
-start_y = 310
+start_y = 268
 row_gap = 16
 svg_height = start_y + (7 * card_h) + (6 * row_gap) + 64
 
 defs = []
 
-# Clip Path for the chart wave (guarantees NO spill/overlap)
 defs.append('''
   <!-- Clip Path for wave chart: strictly confines drawing inside chart box -->
   <clipPath id="chartClip">
@@ -290,7 +289,6 @@ defs.append('''
   </linearGradient>
 ''')
 
-# Semi-transparent card gradients for clean theme blending
 for p in PROJECTS:
     defs.append(f'''
   <linearGradient id="cardGrad_{p['id']}" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -333,17 +331,6 @@ styles = '''
       fill: #1e293b !important;
       stroke-opacity: 0.9 !important;
     }
-    .social-btn {
-      transition: all 0.25s ease;
-      cursor: pointer;
-    }
-    .social-btn:hover rect {
-      fill: #162238 !important;
-      stroke: #00f2fe !important;
-    }
-    .social-btn:hover text {
-      fill: #00f2fe !important;
-    }
     .badge-pill {
       transition: all 0.25s ease;
     }
@@ -354,68 +341,10 @@ styles = '''
   </style>
 '''
 
-# 1. TOP HEADER & TELEMETRY BAR
-top_bar_svg = '''
-  <!-- TOP TELEMETRY CONSOLE BAR -->
-  <g transform="translate(34, 22)">
-    <!-- Left Status Capsule -->
-    <rect x="0" y="0" width="316" height="28" rx="14" fill="#090e18" fill-opacity="0.8" stroke="#1f2c47" stroke-width="1"/>
-    <circle cx="16" cy="14" r="3.5" fill="#10b981"/>
-    <circle cx="16" cy="14" r="3.5" fill="#10b981" opacity="0.6">
-      <animate attributeName="r" values="3.5;8;3.5" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="28" y="18" class="font-mono" font-size="9.5" font-weight="700" fill="#94a3b8" letter-spacing="1">
-      SYSTEM MATRIX // 14 SERVICES ONLINE
-    </text>
-
-    <!-- Center System Signal Indicator -->
-    <g transform="translate(328, 0)">
-      <rect x="0" y="0" width="138" height="28" rx="14" fill="#090e18" fill-opacity="0.8" stroke="#1f2c47" stroke-width="1"/>
-      <circle cx="14" cy="14" r="3" fill="#00f2fe"/>
-      <text x="24" y="18" class="font-mono" font-size="9" font-weight="600" fill="#38bdf8" letter-spacing="0.5">
-        DISPATCH: REALTIME
-      </text>
-    </g>
-
-    <!-- Right Clickable Social Actions (STRICT: NO WEBSITE) -->
-    <g transform="translate(480, 0)">
-      <!-- GitHub -->
-      <a xlink:href="https://github.com/saadali122gb" href="https://github.com/saadali122gb" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <rect x="0" y="0" width="128" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-        <path d="M12 7C8.68 7 6 9.68 6 13c0 2.65 1.72 4.9 4.1 5.69.3.05.41-.13.41-.29 0-.14 0-.61 0-1.12-1.51.28-1.9-.37-2.02-.7-.07-.17-.36-.7-.61-.85-.21-.11-.51-.39-.01-.4.47-.01.81.43.92.61.54.91 1.4.65 1.75.5.05-.39.21-.65.38-.8-1.34-.15-2.73-.67-2.73-2.96 0-.65.23-1.19.61-1.61-.06-.15-.27-.77.06-1.59 0 0 .5-.16 1.65.61.48-.13.99-.2 1.5-.2.51 0 1.02.07 1.5.2 1.15-.78 1.65-.61 1.65-.61.33.82.12 1.44.06 1.59.38.42.61.96.61 1.61 0 2.3-1.4 2.81-2.74 2.96.22.19.41.55.41 1.11 0 .8-.01 1.45-.01 1.65 0 .16.11.35.41.29A7.01 7.01 0 0 0 18 13c0-3.32-2.68-6-6-6z" fill="#f8fafc"/>
-        <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">GitHub</text>
-        <text x="70" y="18" class="font-mono" font-size="9" fill="#64748b">profile ↗</text>
-      </a>
-
-      <!-- LinkedIn -->
-      <a xlink:href="https://www.linkedin.com/in/saad-rana-64a285320/" href="https://www.linkedin.com/in/saad-rana-64a285320/" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <g transform="translate(136, 0)">
-          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-          <path d="M9 7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1.3 2.3h2.6V17H7.7V9.8zm4.7 0h2.5v1.1h.04c.35-.66 1.2-1.36 2.48-1.36 2.65 0 3.14 1.74 3.14 4V17H18v-3.4c0-.81-.02-1.85-1.13-1.85-1.13 0-1.3.88-1.3 1.79V17h-2.6V9.8z" fill="#38bdf8"/>
-          <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">LinkedIn</text>
-          <text x="78" y="18" class="font-mono" font-size="9" fill="#64748b">connect ↗</text>
-        </g>
-      </a>
-
-      <!-- Email -->
-      <a xlink:href="mailto:saadali122gb@gmail.com" href="mailto:saadali122gb@gmail.com" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <g transform="translate(278, 0)">
-          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-          <path d="M8 7h10c.8 0 1.5.7 1.5 1.5v9c0 .8-.7 1.5-1.5 1.5H8c-.8 0-1.5-.7-1.5-1.5v-9C6.5 7.7 7.2 7 8 7zm0 1.5v.4l5 3.1 5-3.1v-.4H8zm10 9v-6.8l-4.6 2.8c-.2.1-.6.1-.8 0L8 10.7V17.5h10z" fill="#f43f5e"/>
-          <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">Email</text>
-          <text x="64" y="18" class="font-mono" font-size="9" fill="#64748b">contact ↗</text>
-        </g>
-      </a>
-    </g>
-  </g>
-'''
-
-# 2. GRAPHICAL DASHBOARD SECTION (CONTRIBUTION CURVE + METRIC GAUGES)
-# Notice: Smooth Cubic Bezier strictly bounded between Y=20 and Y=88 inside chartClip
+# 1. GRAPHICAL DASHBOARD SECTION (CONTRIBUTION CURVE + METRIC GAUGES)
 graphical_section_svg = '''
   <!-- SECTION A: CONTRIBUTION & ACTIVITY WAVEFORM (GRAPHICAL CHART) -->
-  <g transform="translate(34, 62)">
+  <g transform="translate(34, 20)">
     <!-- Container Card (Transparent glass) -->
     <rect x="0" y="0" width="490" height="172" rx="12" fill="#080c16" fill-opacity="0.8" stroke="#1a273f" stroke-width="1"/>
     
@@ -449,10 +378,7 @@ graphical_section_svg = '''
             fill="none" stroke="url(#waveStrokeGrad)" stroke-width="2.6" stroke-linecap="round"/>
 
       <!-- Glowing Data Nodes at Wave Peaks (Strictly bounded) -->
-      <!-- Node 1 -->
       <circle cx="45" cy="45" r="3" fill="#f8fafc" stroke="#00f2fe" stroke-width="1.8"/>
-      
-      <!-- Node 2 -->
       <circle cx="135" cy="35" r="3" fill="#f8fafc" stroke="#00f2fe" stroke-width="1.8"/>
 
       <!-- Node 3 (Highest Peak at 230,20) -->
@@ -462,9 +388,7 @@ graphical_section_svg = '''
         <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
       </circle>
 
-      <!-- Node 4 -->
       <circle cx="330" cy="30" r="3" fill="#f8fafc" stroke="#818cf8" stroke-width="1.8"/>
-      <!-- Other nodes -->
       <circle cx="90" cy="75" r="2.2" fill="#38bdf8"/>
       <circle cx="180" cy="70" r="2.2" fill="#00f2fe"/>
       <circle cx="280" cy="65" r="2.2" fill="#818cf8"/>
@@ -484,7 +408,7 @@ graphical_section_svg = '''
   </g>
 
   <!-- SECTION B: PERFORMANCE METRIC GAUGES & LANGUAGE DISTRIBUTION -->
-  <g transform="translate(538, 62)">
+  <g transform="translate(538, 20)">
     <rect x="0" y="0" width="388" height="172" rx="12" fill="#080c16" fill-opacity="0.8" stroke="#1a273f" stroke-width="1"/>
     
     <!-- Title -->
@@ -539,18 +463,12 @@ graphical_section_svg = '''
       <text x="0" y="-4" class="font-mono" font-size="8.5" font-weight="700" fill="#64748b" letter-spacing="0.5">
         STACK DISTRIBUTION
       </text>
-      <!-- Multi-Color Progress Bar -->
       <rect x="0" y="4" width="352" height="7" rx="3.5" fill="#1e293b"/>
-      <!-- TypeScript / JS (38%) -->
       <rect x="0" y="4" width="134" height="7" rx="3.5" fill="#38bdf8"/>
-      <!-- Python / FastAPI (28%) -->
       <rect x="136" y="4" width="98" height="7" rx="2" fill="#00f2fe"/>
-      <!-- C# / .NET (22%) -->
       <rect x="236" y="4" width="76" height="7" rx="2" fill="#a855f7"/>
-      <!-- Spatial GIS / SQL (12%) -->
       <rect x="314" y="4" width="38" height="7" rx="2" fill="#10b981"/>
 
-      <!-- Legend -->
       <g transform="translate(0, 24)" class="font-mono" font-size="8" fill="#94a3b8">
         <circle cx="4" cy="-3" r="3" fill="#38bdf8"/><text x="11" y="0">TypeScript 38%</text>
         <circle cx="100" cy="-3" r="3" fill="#00f2fe"/><text x="107" y="0">Python 28%</text>
@@ -561,13 +479,13 @@ graphical_section_svg = '''
   </g>
 '''
 
-# 3. MASTER TECHNOLOGY BADGES ROW
+# 2. MASTER TECHNOLOGY BADGES ROW
 badges_list_svg = []
 cur_bx = 34
 for b_name, b_col in TECH_BADGES:
     bw = len(b_name) * 6.5 + 24
     badge_str = f'''
-    <g transform="translate({cur_bx}, 248)" class="badge-pill">
+    <g transform="translate({cur_bx}, 206)" class="badge-pill">
       <rect x="0" y="0" width="{bw}" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="{b_col}" stroke-opacity="0.3" stroke-width="0.9"/>
       <circle cx="10" cy="12" r="2.5" fill="{b_col}"/>
       <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="{b_col}" letter-spacing="0.5">
@@ -580,10 +498,10 @@ for b_name, b_col in TECH_BADGES:
 
 badges_row_svg = "\n".join(badges_list_svg)
 
-# 4. SECTION DIVIDER
+# 3. SECTION DIVIDER
 divider_svg = '''
   <!-- SECTION DIVIDER WITH MOVING LIGHT PULSE -->
-  <g transform="translate(34, 288)">
+  <g transform="translate(34, 246)">
     <line x1="0" y1="0" x2="892" y2="0" stroke="#162238" stroke-width="1"/>
     <!-- Animated Light Runner on Divider -->
     <rect x="0" y="-1" width="160" height="2" fill="url(#scanlineGrad)">
@@ -598,7 +516,7 @@ divider_svg = '''
   </g>
 '''
 
-# 5. ENHANCED 14 PROJECT CARDS
+# 4. ENHANCED 14 PROJECT CARDS
 cards_svg = []
 for p in PROJECTS:
     cx = start_x[p['col']]
@@ -712,7 +630,7 @@ for p in PROJECTS:
 
 cards_content = "\n".join(cards_svg)
 
-# 6. FOOTER BAR
+# 5. FOOTER BAR
 footer_y = svg_height - 52
 footer_svg = f'''
   <!-- FOOTER STATUS CONSOLE (Transparent) -->
@@ -752,7 +670,7 @@ scanline_svg = f'''
   </line>
 '''
 
-# ENTIRE SVG WITH FULLY TRANSPARENT BACKGROUND
+# ENTIRE SVG WITH FULLY TRANSPARENT BACKGROUND AND NO TOP PILL BAR
 full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
      viewBox="0 0 {svg_width} {svg_height}" width="100%" height="100%"
      style="background: transparent; text-rendering: geometricPrecision; shape-rendering: geometricPrecision;">
@@ -769,8 +687,6 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
   <rect width="{svg_width}" height="500" fill="url(#topGlow)" pointer-events="none"/>
 
 {scanline_svg}
-
-{top_bar_svg}
 
 {graphical_section_svg}
 
