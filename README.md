@@ -11,8 +11,6 @@ B.S. Remote Sensing & GIS · Government College University, Lahore (GCUL)
 
 ---
 
-<p align="center">
-  <a href="https://github.com/saadali122gb">
-    <img src="./assets/projects-showcase.svg" alt="Animated Projects Showcase" width="100%" />
-  </a>
-</p>
+<div align="center">
+  <img src="./assets/projects-showcase.svg" alt="Rana Saad Ali Khan - Featured Projects Showcase" width="100%" />
+</div>
