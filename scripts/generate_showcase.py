@@ -15,7 +15,8 @@ PROJECTS = [
         "dur": "3.2s",
         "delay": "0.0s",
         "col": 0,
-        "row": 0
+        "row": 0,
+        "spark": "M 0,10 Q 15,2 30,12 T 60,4 T 90,8"
     },
     {
         "id": "02",
@@ -29,7 +30,8 @@ PROJECTS = [
         "dur": "3.7s",
         "delay": "0.4s",
         "col": 1,
-        "row": 0
+        "row": 0,
+        "spark": "M 0,12 Q 18,3 36,10 T 68,2 T 90,9"
     },
     {
         "id": "03",
@@ -43,7 +45,8 @@ PROJECTS = [
         "dur": "3.4s",
         "delay": "0.8s",
         "col": 0,
-        "row": 1
+        "row": 1,
+        "spark": "M 0,8 Q 20,14 40,3 T 70,11 T 90,5"
     },
     {
         "id": "04",
@@ -57,7 +60,8 @@ PROJECTS = [
         "dur": "3.9s",
         "delay": "1.2s",
         "col": 1,
-        "row": 1
+        "row": 1,
+        "spark": "M 0,11 Q 22,2 45,13 T 75,4 T 90,8"
     },
     {
         "id": "05",
@@ -71,7 +75,8 @@ PROJECTS = [
         "dur": "3.3s",
         "delay": "1.6s",
         "col": 0,
-        "row": 2
+        "row": 2,
+        "spark": "M 0,6 Q 25,14 50,4 T 75,10 T 90,3"
     },
     {
         "id": "06",
@@ -85,7 +90,8 @@ PROJECTS = [
         "dur": "3.8s",
         "delay": "2.0s",
         "col": 1,
-        "row": 2
+        "row": 2,
+        "spark": "M 0,13 Q 18,4 42,9 T 72,2 T 90,11"
     },
     {
         "id": "07",
@@ -99,7 +105,8 @@ PROJECTS = [
         "dur": "3.5s",
         "delay": "0.3s",
         "col": 0,
-        "row": 3
+        "row": 3,
+        "spark": "M 0,9 Q 20,2 45,12 T 70,5 T 90,9"
     },
     {
         "id": "08",
@@ -113,7 +120,8 @@ PROJECTS = [
         "dur": "4.1s",
         "delay": "0.7s",
         "col": 1,
-        "row": 3
+        "row": 3,
+        "spark": "M 0,12 Q 24,4 48,11 T 76,3 T 90,7"
     },
     {
         "id": "09",
@@ -127,7 +135,8 @@ PROJECTS = [
         "dur": "3.2s",
         "delay": "1.1s",
         "col": 0,
-        "row": 4
+        "row": 4,
+        "spark": "M 0,7 Q 20,13 45,4 T 70,11 T 90,6"
     },
     {
         "id": "10",
@@ -141,7 +150,8 @@ PROJECTS = [
         "dur": "3.6s",
         "delay": "1.5s",
         "col": 1,
-        "row": 4
+        "row": 4,
+        "spark": "M 0,10 Q 15,3 35,12 T 65,4 T 90,10"
     },
     {
         "id": "11",
@@ -155,7 +165,8 @@ PROJECTS = [
         "dur": "3.4s",
         "delay": "0.5s",
         "col": 0,
-        "row": 5
+        "row": 5,
+        "spark": "M 0,8 Q 22,14 44,4 T 72,9 T 90,4"
     },
     {
         "id": "12",
@@ -169,7 +180,8 @@ PROJECTS = [
         "dur": "3.9s",
         "delay": "0.9s",
         "col": 1,
-        "row": 5
+        "row": 5,
+        "spark": "M 0,11 Q 25,3 50,12 T 75,4 T 90,9"
     },
     {
         "id": "13",
@@ -183,7 +195,8 @@ PROJECTS = [
         "dur": "3.7s",
         "delay": "1.3s",
         "col": 0,
-        "row": 6
+        "row": 6,
+        "spark": "M 0,7 Q 18,12 40,3 T 70,11 T 90,5"
     },
     {
         "id": "14",
@@ -197,80 +210,87 @@ PROJECTS = [
         "dur": "3.3s",
         "delay": "1.7s",
         "col": 1,
-        "row": 6
+        "row": 6,
+        "spark": "M 0,12 Q 22,4 45,10 T 72,3 T 90,8"
     }
 ]
 
-svg_width = 960
-svg_height = 1320
-card_w = 436
-card_h = 126
-start_x = [34, 490]
-start_y = 246
-row_gap = 16
+TECH_BADGES = [
+    ("MERN STACK", "#00f2fe"),
+    (".NET CORE", "#818cf8"),
+    ("PYTHON / FASTAPI", "#38bdf8"),
+    ("AI AGENTS / RAG", "#a855f7"),
+    ("SOCKET.IO REAL-TIME", "#f59e0b"),
+    ("POSTGRES & MONGO", "#10b981"),
+    ("DOCKER & CLOUD", "#06b6d4"),
+    ("SPATIAL GIS", "#f43f5e"),
+]
 
-# Build Gradients & Defs
+svg_width = 960
+card_w = 436
+card_h = 130
+start_x = [34, 490]
+start_y = 310
+row_gap = 16
+svg_height = start_y + (7 * card_h) + (6 * row_gap) + 64  # 1318 + 64 = 1380
+
 defs = []
 
 defs.append('''
   <!-- Background Pattern -->
   <pattern id="techGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#121a2d" stroke-width="0.7" opacity="0.65"/>
-    <circle cx="24" cy="24" r="0.75" fill="#1e293b" opacity="0.8"/>
+    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#101726" stroke-width="0.75" opacity="0.7"/>
+    <circle cx="24" cy="24" r="0.75" fill="#1e293b" opacity="0.85"/>
   </pattern>
 ''')
 
 defs.append('''
-  <!-- Radial Lighting Glows -->
-  <radialGradient id="topAura" cx="50%" cy="0%" r="55%">
-    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.16"/>
-    <stop offset="40%" stop-color="#6366f1" stop-opacity="0.06"/>
+  <!-- Ambient Glows -->
+  <radialGradient id="topGlow" cx="50%" cy="0%" r="50%">
+    <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.14"/>
+    <stop offset="45%" stop-color="#6366f1" stop-opacity="0.05"/>
     <stop offset="100%" stop-color="#05070c" stop-opacity="0"/>
   </radialGradient>
-  <radialGradient id="sideAura" cx="90%" cy="50%" r="45%">
-    <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.07"/>
-    <stop offset="100%" stop-color="#05070c" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="bottomAura" cx="10%" cy="95%" r="40%">
-    <stop offset="0%" stop-color="#a855f7" stop-opacity="0.07"/>
+  <radialGradient id="waveGlow" cx="25%" cy="15%" r="35%">
+    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.12"/>
     <stop offset="100%" stop-color="#05070c" stop-opacity="0"/>
   </radialGradient>
 ''')
 
 defs.append('''
-  <linearGradient id="scanlineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
-    <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.3"/>
-    <stop offset="50%" stop-color="#818cf8" stop-opacity="0.85"/>
-    <stop offset="75%" stop-color="#38bdf8" stop-opacity="0.3"/>
-    <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
-  </linearGradient>
-  
-  <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color="#ffffff"/>
-    <stop offset="70%" stop-color="#e2e8f0"/>
-    <stop offset="100%" stop-color="#94a3b8"/>
+  <!-- Chart Gradients -->
+  <linearGradient id="waveFillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.32"/>
+    <stop offset="60%" stop-color="#00f2fe" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
   </linearGradient>
 
-  <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color="#1e293b" stop-opacity="0.2"/>
-    <stop offset="15%" stop-color="#38bdf8" stop-opacity="0.8"/>
-    <stop offset="50%" stop-color="#818cf8" stop-opacity="0.4"/>
-    <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.8"/>
-    <stop offset="100%" stop-color="#1e293b" stop-opacity="0.2"/>
+  <linearGradient id="waveStrokeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#38bdf8"/>
+    <stop offset="35%" stop-color="#00f2fe"/>
+    <stop offset="70%" stop-color="#818cf8"/>
+    <stop offset="100%" stop-color="#38bdf8"/>
+  </linearGradient>
+
+  <linearGradient id="scanlineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+    <stop offset="30%" stop-color="#00f2fe" stop-opacity="0.4"/>
+    <stop offset="50%" stop-color="#a855f7" stop-opacity="0.9"/>
+    <stop offset="70%" stop-color="#00f2fe" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
   </linearGradient>
 
   <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#131c2e" stop-opacity="0.95"/>
-    <stop offset="100%" stop-color="#0a101d" stop-opacity="0.95"/>
+    <stop offset="0%" stop-color="#111827" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#090d16" stop-opacity="0.95"/>
   </linearGradient>
 ''')
 
 for p in PROJECTS:
     defs.append(f'''
   <linearGradient id="cardGrad_{p['id']}" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#0d1424" stop-opacity="0.92"/>
-    <stop offset="100%" stop-color="#070a12" stop-opacity="0.96"/>
+    <stop offset="0%" stop-color="#0c1220" stop-opacity="0.92"/>
+    <stop offset="100%" stop-color="#070a12" stop-opacity="0.98"/>
   </linearGradient>
   <linearGradient id="beamGrad_{p['id']}" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="{p['accent']}" stop-opacity="0"/>
@@ -283,14 +303,6 @@ defs_content = "\n".join(defs)
 
 styles = '''
   <style>
-    @keyframes pulseAura {
-      0%, 100% { opacity: 0.8; }
-      50% { opacity: 0.4; }
-    }
-    @keyframes sweepGlow {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(200%); }
-    }
     .font-sans {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", sans-serif;
     }
@@ -304,10 +316,10 @@ styles = '''
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .card-item:hover .card-box {
-      stroke: #38bdf8 !important;
+      stroke: #00f2fe !important;
       stroke-width: 1.5px !important;
-      fill: #0f182c !important;
-      filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.6));
+      fill: #0e1628 !important;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.7));
     }
     .card-item:hover .card-title {
       fill: #ffffff !important;
@@ -321,116 +333,266 @@ styles = '''
       cursor: pointer;
     }
     .social-btn:hover rect {
-      fill: #1a253c !important;
-      stroke: #38bdf8 !important;
+      fill: #162238 !important;
+      stroke: #00f2fe !important;
     }
     .social-btn:hover text {
-      fill: #38bdf8 !important;
+      fill: #00f2fe !important;
+    }
+    .badge-pill {
+      transition: all 0.25s ease;
+    }
+    .badge-pill:hover rect {
+      fill-opacity: 0.25 !important;
+      stroke-opacity: 0.8 !important;
     }
   </style>
 '''
 
-header_svg = '''
-  <!-- TOP STATUS PILL -->
-  <g transform="translate(34, 28)">
-    <rect x="0" y="0" width="310" height="26" rx="13" fill="#0c1220" stroke="#1f2c47" stroke-width="1"/>
-    <!-- Animated Status Dot -->
-    <circle cx="16" cy="13" r="3.5" fill="#10b981"/>
-    <circle cx="16" cy="13" r="3.5" fill="#10b981" opacity="0.6">
+# 1. TOP HEADER & TELEMETRY BAR
+top_bar_svg = '''
+  <!-- TOP TELEMETRY CONSOLE BAR -->
+  <g transform="translate(34, 22)">
+    <!-- Left Status Capsule -->
+    <rect x="0" y="0" width="316" height="28" rx="14" fill="#090e18" stroke="#1a273f" stroke-width="1"/>
+    <circle cx="16" cy="14" r="3.5" fill="#10b981"/>
+    <circle cx="16" cy="14" r="3.5" fill="#10b981" opacity="0.6">
       <animate attributeName="r" values="3.5;8;3.5" dur="2s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <text x="28" y="17" class="font-mono" font-size="9.5" font-weight="600" fill="#94a3b8" letter-spacing="1">
-      FULL-STACK &amp; AI SYSTEMS PORTFOLIO
+    <text x="28" y="18" class="font-mono" font-size="9.5" font-weight="700" fill="#94a3b8" letter-spacing="1">
+      SYSTEM MATRIX // 14 SERVICES ONLINE
     </text>
-  </g>
 
-  <!-- LIVE TIME/NODE BADGE (RIGHT) -->
-  <g transform="translate(712, 28)">
-    <rect x="0" y="0" width="214" height="26" rx="13" fill="#0c1220" stroke="#1f2c47" stroke-width="1"/>
-    <circle cx="14" cy="13" r="3" fill="#38bdf8"/>
-    <text x="24" y="17" class="font-mono" font-size="9.5" font-weight="500" fill="#64748b" letter-spacing="0.5">
-      NODE: GCUL // 14 SERVICES
-    </text>
-  </g>
-
-  <!-- MAIN NAME & TITLES -->
-  <g transform="translate(34, 82)">
-    <text x="0" y="0" class="font-sans" font-size="33" font-weight="800" fill="url(#titleGrad)" letter-spacing="-0.6">
-      Rana Saad Ali Khan
-    </text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="27" class="font-sans" font-size="14.5" font-weight="500" fill="#94a3b8">
-      Full-Stack Software Developer <tspan fill="#38bdf8">•</tspan> MERN <tspan fill="#38bdf8">•</tspan> .NET <tspan fill="#38bdf8">•</tspan> Python <tspan fill="#38bdf8">•</tspan> AI Agents <tspan fill="#38bdf8">•</tspan> Real-Time Systems
-    </text>
-    
-    <!-- Academic & Specialization Badges -->
-    <g transform="translate(0, 42)">
-      <!-- Degree Badge -->
-      <rect x="0" y="0" width="260" height="24" rx="6" fill="#0d1527" stroke="#1e2c4a" stroke-width="1"/>
-      <text x="10" y="16" class="font-mono" font-size="10" font-weight="600" fill="#38bdf8">
-        🎓 B.S. Remote Sensing &amp; GIS @ GCUL
+    <!-- Center System Signal Indicator -->
+    <g transform="translate(328, 6)">
+      <rect x="0" y="0" width="138" height="28" rx="14" fill="#090e18" stroke="#1a273f" stroke-width="1"/>
+      <circle cx="14" cy="14" r="3" fill="#00f2fe"/>
+      <text x="24" y="18" class="font-mono" font-size="9" font-weight="600" fill="#38bdf8" letter-spacing="0.5">
+        DISPATCH: REALTIME
       </text>
+    </g>
 
-      <!-- Focus Badge -->
-      <rect x="270" y="0" width="254" height="24" rx="6" fill="#0d1527" stroke="#1e2c4a" stroke-width="1"/>
-      <text x="280" y="16" class="font-mono" font-size="10" font-weight="600" fill="#a855f7">
-        ⚡ Production RAG &amp; Real-Time Pipelines
+    <!-- Right Clickable Social Actions (STRICT: NO WEBSITE) -->
+    <g transform="translate(480, 0)">
+      <!-- GitHub -->
+      <a xlink:href="https://github.com/saadali122gb" href="https://github.com/saadali122gb" target="_blank" rel="noopener noreferrer" class="social-btn">
+        <rect x="0" y="0" width="128" height="28" rx="14" fill="url(#btnGrad)" stroke="#1a273f" stroke-width="1"/>
+        <path d="M12 7C8.68 7 6 9.68 6 13c0 2.65 1.72 4.9 4.1 5.69.3.05.41-.13.41-.29 0-.14 0-.61 0-1.12-1.51.28-1.9-.37-2.02-.7-.07-.17-.36-.7-.61-.85-.21-.11-.51-.39-.01-.4.47-.01.81.43.92.61.54.91 1.4.65 1.75.5.05-.39.21-.65.38-.8-1.34-.15-2.73-.67-2.73-2.96 0-.65.23-1.19.61-1.61-.06-.15-.27-.77.06-1.59 0 0 .5-.16 1.65.61.48-.13.99-.2 1.5-.2.51 0 1.02.07 1.5.2 1.15-.78 1.65-.61 1.65-.61.33.82.12 1.44.06 1.59.38.42.61.96.61 1.61 0 2.3-1.4 2.81-2.74 2.96.22.19.41.55.41 1.11 0 .8-.01 1.45-.01 1.65 0 .16.11.35.41.29A7.01 7.01 0 0 0 18 13c0-3.32-2.68-6-6-6z" fill="#f8fafc"/>
+        <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">GitHub</text>
+        <text x="70" y="18" class="font-mono" font-size="9" fill="#64748b">profile ↗</text>
+      </a>
+
+      <!-- LinkedIn -->
+      <a xlink:href="https://www.linkedin.com/in/saad-rana-64a285320/" href="https://www.linkedin.com/in/saad-rana-64a285320/" target="_blank" rel="noopener noreferrer" class="social-btn">
+        <g transform="translate(136, 0)">
+          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1a273f" stroke-width="1"/>
+          <path d="M9 7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1.3 2.3h2.6V17H7.7V9.8zm4.7 0h2.5v1.1h.04c.35-.66 1.2-1.36 2.48-1.36 2.65 0 3.14 1.74 3.14 4V17H18v-3.4c0-.81-.02-1.85-1.13-1.85-1.13 0-1.3.88-1.3 1.79V17h-2.6V9.8z" fill="#38bdf8"/>
+          <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">LinkedIn</text>
+          <text x="78" y="18" class="font-mono" font-size="9" fill="#64748b">connect ↗</text>
+        </g>
+      </a>
+
+      <!-- Email -->
+      <a xlink:href="mailto:saadali122gb@gmail.com" href="mailto:saadali122gb@gmail.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+        <g transform="translate(278, 0)">
+          <rect x="0" y="0" width="134" height="28" rx="14" fill="url(#btnGrad)" stroke="#1a273f" stroke-width="1"/>
+          <path d="M8 7h10c.8 0 1.5.7 1.5 1.5v9c0 .8-.7 1.5-1.5 1.5H8c-.8 0-1.5-.7-1.5-1.5v-9C6.5 7.7 7.2 7 8 7zm0 1.5v.4l5 3.1 5-3.1v-.4H8zm10 9v-6.8l-4.6 2.8c-.2.1-.6.1-.8 0L8 10.7V17.5h10z" fill="#f43f5e"/>
+          <text x="26" y="18" class="font-sans" font-size="11" font-weight="600" fill="#f8fafc">Email</text>
+          <text x="64" y="18" class="font-mono" font-size="9" fill="#64748b">contact ↗</text>
+        </g>
+      </a>
+    </g>
+  </g>
+'''
+
+# 2. GRAPHICAL DASHBOARD SECTION (CONTRIBUTION CURVE + METRIC GAUGES)
+graphical_section_svg = '''
+  <!-- SECTION A: CONTRIBUTION & ACTIVITY WAVEFORM (GRAPHICAL CHART) -->
+  <g transform="translate(34, 62)">
+    <!-- Container Card -->
+    <rect x="0" y="0" width="490" height="172" rx="12" fill="#080c16" stroke="#162238" stroke-width="1"/>
+    
+    <!-- Header -->
+    <g transform="translate(18, 22)">
+      <circle cx="0" cy="0" r="3" fill="#00f2fe"/>
+      <text x="10" y="3.5" class="font-mono" font-size="10.5" font-weight="700" fill="#f8fafc" letter-spacing="1">
+        CONTRIBUTION &amp; DISPATCH VELOCITY
       </text>
+      <text x="450" y="3.5" text-anchor="end" class="font-mono" font-size="9" fill="#38bdf8">
+        PEAK: 38 COMMITS/DAY
+      </text>
+    </g>
+
+    <!-- Grid Lines (Subtle) -->
+    <g transform="translate(18, 38)" opacity="0.35">
+      <line x1="0" y1="20" x2="454" y2="20" stroke="#1e293b" stroke-dasharray="2 3"/>
+      <line x1="0" y1="45" x2="454" y2="45" stroke="#1e293b" stroke-dasharray="2 3"/>
+      <line x1="0" y1="70" x2="454" y2="70" stroke="#1e293b" stroke-dasharray="2 3"/>
+      <line x1="0" y1="95" x2="454" y2="95" stroke="#1e293b"/>
+    </g>
+
+    <!-- Spline Curve & Filled Area -->
+    <g transform="translate(18, 38)">
+      <!-- Underneath Gradient Fill -->
+      <path d="M 0,95 L 0,86 Q 30,86 46,65 T 84,24 T 120,90 T 156,42 T 194,80 T 232,18 T 270,72 T 308,34 T 346,88 T 384,54 T 422,76 L 454,72 L 454,95 Z" 
+            fill="url(#waveFillGrad)"/>
+      
+      <!-- Main Glowing Wave Stroke -->
+      <path d="M 0,86 Q 30,86 46,65 T 84,24 T 120,90 T 156,42 T 194,80 T 232,18 T 270,72 T 308,34 T 346,88 T 384,54 T 422,76 L 454,72" 
+            fill="none" stroke="url(#waveStrokeGrad)" stroke-width="2.6" stroke-linecap="round"/>
+
+      <!-- Glowing Data Nodes at Wave Peaks -->
+      <!-- Peak 1 -->
+      <circle cx="84" cy="24" r="3.5" fill="#f8fafc" stroke="#00f2fe" stroke-width="2"/>
+      <circle cx="84" cy="24" r="6" fill="#00f2fe" opacity="0.3">
+        <animate attributeName="r" values="4;8;4" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.4;0;0.4" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Peak 2 (Highest) -->
+      <circle cx="232" cy="18" r="4" fill="#f8fafc" stroke="#00f2fe" stroke-width="2.5"/>
+      <circle cx="232" cy="18" r="8" fill="#00f2fe" opacity="0.35">
+        <animate attributeName="r" values="5;11;5" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Peak 3 -->
+      <circle cx="308" cy="34" r="3.5" fill="#f8fafc" stroke="#818cf8" stroke-width="2"/>
+      <!-- Other nodes -->
+      <circle cx="46" cy="65" r="2.5" fill="#38bdf8"/>
+      <circle cx="156" cy="42" r="2.5" fill="#00f2fe"/>
+      <circle cx="384" cy="54" r="2.5" fill="#818cf8"/>
+      <circle cx="454" cy="72" r="2.5" fill="#38bdf8"/>
+
+      <!-- Timeline Days below curve -->
+      <g transform="translate(0, 114)" class="font-mono" font-size="8.5" fill="#64748b">
+        <text x="0" y="0">DAY 01</text>
+        <text x="80" y="0">DAY 07</text>
+        <text x="160" y="0">DAY 14</text>
+        <text x="232" y="0">DAY 21 (PEAK)</text>
+        <text x="320" y="0">DAY 28</text>
+        <text x="454" y="0" text-anchor="end">CURRENT</text>
+      </g>
     </g>
   </g>
 
-  <!-- SOCIAL / CONTACT BUTTONS (STRICT: NO WEBSITE LINK) -->
-  <g transform="translate(34, 168)">
-    <!-- GitHub Link -->
-    <a xlink:href="https://github.com/saadali122gb" href="https://github.com/saadali122gb" target="_blank" rel="noopener noreferrer" class="social-btn">
-      <rect x="0" y="0" width="154" height="32" rx="7" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-      <!-- GitHub Icon -->
-      <path d="M16 8C11.58 8 8 11.58 8 16c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 24 16c0-4.42-3.58-8-8-8z" fill="#f8fafc"/>
-      <text x="32" y="20.5" class="font-sans" font-size="12" font-weight="600" fill="#f8fafc">GitHub</text>
-      <text x="80" y="20.5" class="font-mono" font-size="10.5" fill="#64748b">/saadali122gb</text>
-    </a>
+  <!-- SECTION B: PERFORMANCE METRIC GAUGES & LANGUAGE DISTRIBUTION -->
+  <g transform="translate(538, 62)">
+    <rect x="0" y="0" width="388" height="172" rx="12" fill="#080c16" stroke="#162238" stroke-width="1"/>
+    
+    <!-- Title -->
+    <g transform="translate(18, 22)">
+      <circle cx="0" cy="0" r="3" fill="#10b981"/>
+      <text x="10" y="3.5" class="font-mono" font-size="10.5" font-weight="700" fill="#f8fafc" letter-spacing="1">
+        ENGINEERING QUALITY &amp; AUDIT GAUGES
+      </text>
+    </g>
 
-    <!-- LinkedIn Link -->
-    <a xlink:href="https://www.linkedin.com/in/saad-rana-64a285320/" href="https://www.linkedin.com/in/saad-rana-64a285320/" target="_blank" rel="noopener noreferrer" class="social-btn">
-      <g transform="translate(164, 0)">
-        <rect x="0" y="0" width="168" height="32" rx="7" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-        <!-- LinkedIn Icon -->
-        <path d="M12 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-1.75 3h3.5V22h-3.5V12zm6.25 0h3.35v1.44h.05c.47-.88 1.6-1.82 3.3-1.82 3.53 0 4.18 2.32 4.18 5.34V22h-3.5v-4.52c0-1.08-.02-2.47-1.5-2.47-1.51 0-1.74 1.18-1.74 2.39V22h-3.5v-10h-.64z" fill="#38bdf8"/>
-        <text x="32" y="20.5" class="font-sans" font-size="12" font-weight="600" fill="#f8fafc">LinkedIn</text>
-        <text x="88" y="20.5" class="font-mono" font-size="10.5" fill="#64748b">/saad-rana</text>
+    <!-- 4 Circular Score Gauges (Like Reference Image 2) -->
+    <g transform="translate(16, 42)">
+      <!-- Gauge 1: Performance -->
+      <g transform="translate(36, 26)">
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#162238" stroke-width="3.5"/>
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#00f2fe" stroke-width="3.5"
+                stroke-dasharray="138.2" stroke-dashoffset="4.1" stroke-linecap="round" transform="rotate(-90)"/>
+        <text x="0" y="4" text-anchor="middle" class="font-mono" font-size="11.5" font-weight="800" fill="#f8fafc">97</text>
+        <text x="0" y="36" text-anchor="middle" class="font-sans" font-size="8.5" font-weight="600" fill="#94a3b8">Performance</text>
       </g>
-    </a>
 
-    <!-- Email Link -->
-    <a xlink:href="mailto:saadali122gb@gmail.com" href="mailto:saadali122gb@gmail.com" target="_blank" rel="noopener noreferrer" class="social-btn">
-      <g transform="translate(342, 0)">
-        <rect x="0" y="0" width="220" height="32" rx="7" fill="url(#btnGrad)" stroke="#1f2c47" stroke-width="1"/>
-        <!-- Mail Icon -->
-        <path d="M10 8h12c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H10c-1.1 0-2-.9-2-2V10c0-1.1.9-2 2-2zm0 2v.51L16 14.2l6-3.69V10H10zm12 12V13l-5.46 3.36c-.33.2-.74.2-1.08 0L10 13v9h12z" fill="#f43f5e"/>
-        <text x="30" y="20.5" class="font-sans" font-size="12" font-weight="600" fill="#f8fafc">Email</text>
-        <text x="70" y="20.5" class="font-mono" font-size="10.5" fill="#64748b">saadali122gb@gmail.com</text>
+      <!-- Gauge 2: Accessibility / RBAC -->
+      <g transform="translate(126, 26)">
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#162238" stroke-width="3.5"/>
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#10b981" stroke-width="3.5"
+                stroke-dasharray="138.2" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90)"/>
+        <text x="0" y="4" text-anchor="middle" class="font-mono" font-size="11.5" font-weight="800" fill="#f8fafc">100</text>
+        <text x="0" y="36" text-anchor="middle" class="font-sans" font-size="8.5" font-weight="600" fill="#94a3b8">Security/RBAC</text>
       </g>
-    </a>
+
+      <!-- Gauge 3: Architecture -->
+      <g transform="translate(216, 26)">
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#162238" stroke-width="3.5"/>
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#a855f7" stroke-width="3.5"
+                stroke-dasharray="138.2" stroke-dashoffset="2.7" stroke-linecap="round" transform="rotate(-90)"/>
+        <text x="0" y="4" text-anchor="middle" class="font-mono" font-size="11.5" font-weight="800" fill="#f8fafc">98</text>
+        <text x="0" y="36" text-anchor="middle" class="font-sans" font-size="8.5" font-weight="600" fill="#94a3b8">Architecture</text>
+      </g>
+
+      <!-- Gauge 4: Real-Time Sockets -->
+      <g transform="translate(306, 26)">
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#162238" stroke-width="3.5"/>
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#f59e0b" stroke-width="3.5"
+                stroke-dasharray="138.2" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90)"/>
+        <text x="0" y="4" text-anchor="middle" class="font-mono" font-size="11.5" font-weight="800" fill="#f8fafc">100</text>
+        <text x="0" y="36" text-anchor="middle" class="font-sans" font-size="8.5" font-weight="600" fill="#94a3b8">Real-Time Sync</text>
+      </g>
+    </g>
+
+    <!-- Language & Stack Distribution Bar (Like Reference Image 2) -->
+    <g transform="translate(18, 126)">
+      <text x="0" y="-4" class="font-mono" font-size="8.5" font-weight="700" fill="#64748b" letter-spacing="0.5">
+        STACK DISTRIBUTION
+      </text>
+      <!-- Multi-Color Progress Bar -->
+      <rect x="0" y="4" width="352" height="7" rx="3.5" fill="#1e293b"/>
+      <!-- TypeScript / JS (38%) -->
+      <rect x="0" y="4" width="134" height="7" rx="3.5" fill="#38bdf8"/>
+      <!-- Python / FastAPI (28%) -->
+      <rect x="136" y="4" width="98" height="7" rx="2" fill="#00f2fe"/>
+      <!-- C# / .NET (22%) -->
+      <rect x="236" y="4" width="76" height="7" rx="2" fill="#a855f7"/>
+      <!-- Spatial GIS / SQL (12%) -->
+      <rect x="314" y="4" width="38" height="7" rx="2" fill="#10b981"/>
+
+      <!-- Legend -->
+      <g transform="translate(0, 24)" class="font-mono" font-size="8" fill="#94a3b8">
+        <circle cx="4" cy="-3" r="3" fill="#38bdf8"/><text x="11" y="0">TypeScript 38%</text>
+        <circle cx="100" cy="-3" r="3" fill="#00f2fe"/><text x="107" y="0">Python 28%</text>
+        <circle cx="190" cy="-3" r="3" fill="#a855f7"/><text x="197" y="0">.NET 22%</text>
+        <circle cx="270" cy="-3" r="3" fill="#10b981"/><text x="277" y="0">GIS/SQL 12%</text>
+      </g>
+    </g>
   </g>
+'''
 
-  <!-- SECTION DIVIDER WITH SUBTLE ANIMATED SCAN BEAM -->
-  <g transform="translate(34, 222)">
+# 3. MASTER TECHNOLOGY BADGES ROW (User requested: "muja badge bhi chahiya koi bhi ho wo muja add krna ha")
+badges_list_svg = []
+cur_bx = 34
+for b_name, b_col in TECH_BADGES:
+    bw = len(b_name) * 6.5 + 24
+    badge_str = f'''
+    <g transform="translate({cur_bx}, 248)" class="badge-pill">
+      <rect x="0" y="0" width="{bw}" height="24" rx="6" fill="#090e18" stroke="{b_col}" stroke-opacity="0.3" stroke-width="0.9"/>
+      <circle cx="10" cy="12" r="2.5" fill="{b_col}"/>
+      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="{b_col}" letter-spacing="0.5">
+        {escape(b_name)}
+      </text>
+    </g>
+'''
+    badges_list_svg.append(badge_str)
+    cur_bx += int(bw + 10)
+
+badges_row_svg = "\n".join(badges_list_svg)
+
+# 4. SECTION DIVIDER
+divider_svg = '''
+  <!-- SECTION DIVIDER WITH MOVING LIGHT PULSE -->
+  <g transform="translate(34, 288)">
     <line x1="0" y1="0" x2="892" y2="0" stroke="#162238" stroke-width="1"/>
     <!-- Animated Light Runner on Divider -->
-    <rect x="0" y="-1" width="140" height="2" fill="url(#scanlineGrad)">
-      <animate attributeName="x" values="0;752;0" dur="6s" repeatCount="indefinite"/>
+    <rect x="0" y="-1" width="160" height="2" fill="url(#scanlineGrad)">
+      <animate attributeName="x" values="0;732;0" dur="5.5s" repeatCount="indefinite"/>
     </rect>
     <text x="0" y="-8" class="font-mono" font-size="9" font-weight="700" fill="#475569" letter-spacing="1.5">
-      FEATURED REPOSITORIES &amp; SYSTEMS ARCHITECTURE
+      FEATURED PRODUCTION ARCHITECTURES // 14 DEPLOYMENTS
     </text>
-    <text x="892" y="-8" text-anchor="end" class="font-mono" font-size="9" font-weight="600" fill="#38bdf8" letter-spacing="0.8">
-      14 ACTIVE PROJECTS ↗
+    <text x="892" y="-8" text-anchor="end" class="font-mono" font-size="9" font-weight="600" fill="#00f2fe" letter-spacing="0.8">
+      ACTIVE CODEBASES ↗
     </text>
   </g>
 '''
 
+# 5. ENHANCED 14 PROJECT CARDS (With corner brackets, animated equalizers/sparklines, distinct accents)
 cards_svg = []
 for p in PROJECTS:
     cx = start_x[p['col']]
@@ -445,11 +607,11 @@ for p in PROJECTS:
   <!-- CARD {cid}: {p['name']} -->
   <g transform="translate({cx}, {cy})" class="card-item">
     <a xlink:href="{p['url']}" href="{p['url']}" target="_blank" rel="noopener noreferrer">
-      <!-- Card Base Rect -->
+      <!-- Card Base Box -->
       <rect class="card-box" x="0" y="0" width="{card_w}" height="{card_h}" rx="10" 
             fill="url(#cardGrad_{cid})" stroke="#172236" stroke-width="1"/>
 
-      <!-- Ambient Card Inner Glow -->
+      <!-- Ambient Glow on card top -->
       <rect x="1" y="1" width="{card_w - 2}" height="32" rx="9" fill="{accent}" opacity="0.04"/>
 
       <!-- Top Border Accent Track -->
@@ -460,57 +622,82 @@ for p in PROJECTS:
         <animate attributeName="x" values="0;{card_w - 90};0" dur="{dur}" begin="{delay}" repeatCount="indefinite"/>
       </rect>
 
-      <!-- Left Vertical Indicator Tab -->
-      <rect x="0" y="18" width="3" height="24" rx="1.5" fill="{accent}"/>
+      <!-- Cyber Corner Brackets (High-Craft Graphic Markings) -->
+      <!-- Top-Left Bracket -->
+      <path d="M 6,14 L 6,6 L 14,6" fill="none" stroke="{accent}" stroke-width="1.2" opacity="0.6"/>
+      <!-- Bottom-Right Bracket -->
+      <path d="M {card_w - 6},{card_h - 14} L {card_w - 6},{card_h - 6} L {card_w - 14},{card_h - 6}" 
+            fill="none" stroke="{accent}" stroke-width="1.2" opacity="0.6"/>
 
-      <!-- CARD HEADER: Index, Title & Live Status Indicator -->
+      <!-- Left Vertical Indicator Tab -->
+      <rect x="0" y="18" width="3" height="26" rx="1.5" fill="{accent}"/>
+
+      <!-- CARD HEADER: Index, Title & Live Telemetry Equalizer -->
       <g transform="translate(18, 24)">
         <!-- Index Number -->
         <text x="0" y="0" class="font-mono" font-size="11" font-weight="700" fill="{accent}" opacity="0.9">
-          {cid}
+          [{cid}]
         </text>
         <!-- Project Title -->
-        <text class="card-title font-sans" x="24" y="0.5" font-size="15.5" font-weight="700" fill="#f8fafc">
+        <text class="card-title font-sans" x="32" y="0.5" font-size="15.5" font-weight="700" fill="#f8fafc">
           {escape(p['name'])}
         </text>
 
-        <!-- Live Pulse Indicator (Top Right) -->
-        <g transform="translate(390, -4)">
-          <circle cx="0" cy="0" r="3.5" fill="{accent}"/>
-          <circle cx="0" cy="0" r="3.5" fill="{accent}" opacity="0.7">
-            <animate attributeName="r" values="3.5;10;3.5" dur="{dur}" begin="{delay}" repeatCount="indefinite"/>
+        <!-- Mini Live Activity Equalizer (Graphical Bars) -->
+        <g transform="translate(352, -10)">
+          <rect x="0" y="0" width="2.5" height="12" rx="1" fill="{accent}" opacity="0.75">
+            <animate attributeName="height" values="6;14;6" dur="1.6s" begin="{delay}" repeatCount="indefinite"/>
+            <animate attributeName="y" values="3;0;3" dur="1.6s" begin="{delay}" repeatCount="indefinite"/>
+          </rect>
+          <rect x="5" y="0" width="2.5" height="14" rx="1" fill="{accent}" opacity="0.95">
+            <animate attributeName="height" values="14;5;14" dur="1.9s" begin="{delay}" repeatCount="indefinite"/>
+            <animate attributeName="y" values="0;4;0" dur="1.9s" begin="{delay}" repeatCount="indefinite"/>
+          </rect>
+          <rect x="10" y="0" width="2.5" height="9" rx="1" fill="{accent}" opacity="0.8">
+            <animate attributeName="height" values="4;13;4" dur="1.4s" begin="{delay}" repeatCount="indefinite"/>
+            <animate attributeName="y" values="5;0;5" dur="1.4s" begin="{delay}" repeatCount="indefinite"/>
+          </rect>
+          <!-- Pulse Dot -->
+          <circle cx="24" cy="7" r="3.5" fill="{accent}"/>
+          <circle cx="24" cy="7" r="3.5" fill="{accent}" opacity="0.6">
+            <animate attributeName="r" values="3.5;8;3.5" dur="{dur}" begin="{delay}" repeatCount="indefinite"/>
             <animate attributeName="opacity" values="0.7;0;0.7" dur="{dur}" begin="{delay}" repeatCount="indefinite"/>
           </circle>
         </g>
       </g>
 
-      <!-- CATEGORY / TAG BADGE -->
-      <g transform="translate(18, 42)">
-        <rect x="0" y="0" width="{len(p['tag']) * 6.8 + 14}" height="19" rx="4.5" 
+      <!-- CATEGORY / TAG BADGE & MINI SPARKLINE -->
+      <g transform="translate(18, 43)">
+        <rect x="0" y="0" width="{len(p['tag']) * 6.7 + 14}" height="19" rx="4.5" 
               fill="{accent}" fill-opacity="0.1" stroke="{accent}" stroke-opacity="0.3" stroke-width="0.8"/>
         <text x="7" y="13" class="font-mono" font-size="9" font-weight="700" fill="{accent}" letter-spacing="0.6">
           {escape(p['tag'])}
         </text>
+
+        <!-- Mini Telemetry Sparkline Curve -->
+        <g transform="translate({card_w - 146}, 4)" opacity="0.55">
+          <path d="{p['spark']}" fill="none" stroke="{accent}" stroke-width="1.4" stroke-linecap="round"/>
+        </g>
       </g>
 
       <!-- DESCRIPTION -->
-      <text x="18" y="85" class="font-sans" font-size="12.2" font-weight="400" fill="#94a3b8">
+      <text x="18" y="87" class="font-sans" font-size="12.2" font-weight="400" fill="#94a3b8">
         {escape(p['desc'])}
       </text>
 
       <!-- FOOTER ROW: Repo Path & Action Link -->
-      <g transform="translate(18, 110)">
+      <g transform="translate(18, 114)">
         <!-- Repo Path Snippet -->
         <text x="0" y="0" class="font-mono" font-size="10" fill="#475569">
           saadali122gb/{p['repo'][:22]}
         </text>
 
         <!-- Action Pill (Right) -->
-        <g transform="translate(300, -12)">
-          <rect class="action-btn" x="0" y="0" width="100" height="20" rx="5" 
+        <g transform="translate(300, -13)">
+          <rect class="action-btn" x="0" y="0" width="100" height="21" rx="5" 
                 fill="#0d1424" stroke="{accent}" stroke-opacity="0.4" stroke-width="0.8"/>
-          <text x="50" y="13.5" text-anchor="middle" class="font-sans" font-size="10" font-weight="600" fill="#e2e8f0">
-            View Repo ↗
+          <text x="50" y="14" text-anchor="middle" class="font-sans" font-size="10" font-weight="600" fill="#e2e8f0">
+            LAUNCH REPO ↗
           </text>
         </g>
       </g>
@@ -521,42 +708,43 @@ for p in PROJECTS:
 
 cards_content = "\n".join(cards_svg)
 
-footer_y = 1260
+# 6. FOOTER BAR
+footer_y = svg_height - 52
 footer_svg = f'''
   <!-- FOOTER STATUS CONSOLE -->
   <g transform="translate(34, {footer_y})">
-    <rect x="0" y="0" width="892" height="38" rx="8" fill="#080c16" stroke="#162238" stroke-width="1"/>
+    <rect x="0" y="0" width="892" height="36" rx="8" fill="#080c16" stroke="#162238" stroke-width="1"/>
     
     <!-- Status Terminal Dot -->
-    <circle cx="18" cy="19" r="4" fill="#10b981"/>
-    <circle cx="18" cy="19" r="4" fill="#10b981" opacity="0.5">
+    <circle cx="18" cy="18" r="4" fill="#10b981"/>
+    <circle cx="18" cy="18" r="4" fill="#10b981" opacity="0.5">
       <animate attributeName="r" values="4;8;4" dur="2.5s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
     </circle>
     
-    <text x="32" y="23" class="font-mono" font-size="10" font-weight="600" fill="#64748b">
-      SYSTEM MATRIX ONLINE <tspan fill="#334155">//</tspan> ALL 14 REPOSITORIES ACTIVE
+    <text x="32" y="22" class="font-mono" font-size="9.5" font-weight="700" fill="#64748b">
+      SYSTEM MATRIX ONLINE <tspan fill="#334155">//</tspan> 14 PRODUCTION ARCHITECTURES VERIFIED
     </text>
 
     <!-- Center Architecture Tags -->
-    <text x="446" y="23" text-anchor="middle" class="font-mono" font-size="9.5" fill="#475569">
-      MERN • .NET • PYTHON • FASTAPI • DOCKER • SPATIAL GIS • LLM GUARDRAILS
+    <text x="446" y="22" text-anchor="middle" class="font-mono" font-size="9" fill="#475569">
+      MERN • .NET CORE • FASTAPI • DOCKER • REAL-TIME SOCKETS • SPATIAL GIS
     </text>
 
     <!-- Right Profile Link -->
     <a xlink:href="https://github.com/saadali122gb" href="https://github.com/saadali122gb" target="_blank" rel="noopener noreferrer">
-      <text x="874" y="23" text-anchor="end" class="font-mono" font-size="10" font-weight="700" fill="#38bdf8">
+      <text x="874" y="22" text-anchor="end" class="font-mono" font-size="9.5" font-weight="700" fill="#00f2fe">
         @saadali122gb ↗
       </text>
     </a>
   </g>
 '''
 
-scanline_svg = '''
+scanline_svg = f'''
   <!-- Subtle Ambient Scanline traversing vertically -->
   <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.18">
-    <animate attributeName="y1" values="0;1320;0" dur="10s" repeatCount="indefinite"/>
-    <animate attributeName="y2" values="0;1320;0" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="y1" values="0;{svg_height};0" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="0;{svg_height};0" dur="10s" repeatCount="indefinite"/>
   </line>
 '''
 
@@ -574,13 +762,17 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
   <rect width="{svg_width}" height="{svg_height}" fill="url(#techGrid)"/>
 
   <!-- AMBIENT LIGHTING OVERLAYS -->
-  <rect width="{svg_width}" height="600" fill="url(#topAura)"/>
-  <rect width="{svg_width}" height="{svg_height}" fill="url(#sideAura)"/>
-  <rect width="{svg_width}" height="{svg_height}" fill="url(#bottomAura)"/>
+  <rect width="{svg_width}" height="500" fill="url(#topGlow)"/>
 
 {scanline_svg}
 
-{header_svg}
+{top_bar_svg}
+
+{graphical_section_svg}
+
+{badges_row_svg}
+
+{divider_svg}
 
 {cards_content}
 
@@ -595,4 +787,4 @@ svg_file.write_text(full_svg, encoding="utf-8")
 
 # Validate XML
 ET.fromstring(full_svg)
-print(f"Generated and validated {svg_file} successfully!")
+print(f"Generated and validated {svg_file} successfully! (Dimensions: {svg_width}x{svg_height})")
