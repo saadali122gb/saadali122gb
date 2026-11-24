@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-     viewBox="0 0 960 1338" width="100%" height="100%"
+     viewBox="0 0 960 1302" width="100%" height="100%"
      style="background: transparent; text-rendering: geometricPrecision; shape-rendering: geometricPrecision;">
   <defs>
 
@@ -234,18 +234,11 @@
       fill: #1e293b !important;
       stroke-opacity: 0.9 !important;
     }
-    .badge-pill {
-      transition: all 0.25s ease;
-    }
-    .badge-pill:hover rect {
-      fill-opacity: 0.4 !important;
-      stroke-opacity: 0.8 !important;
-    }
   </style>
 
 
   <!-- TRANSPARENT GRID PATTERN OVERLAY -->
-  <rect width="960" height="1338" fill="url(#techGrid)" pointer-events="none"/>
+  <rect width="960" height="1302" fill="url(#techGrid)" pointer-events="none"/>
 
   <!-- AMBIENT LIGHTING OVERLAYS -->
   <rect width="960" height="500" fill="url(#topGlow)" pointer-events="none"/>
@@ -253,8 +246,8 @@
 
   <!-- Subtle Ambient Scanline traversing vertically -->
   <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.16" pointer-events="none">
-    <animate attributeName="y1" values="0;1338;0" dur="10s" repeatCount="indefinite"/>
-    <animate attributeName="y2" values="0;1338;0" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="y1" values="0;1302;0" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="0;1302;0" dur="10s" repeatCount="indefinite"/>
   </line>
 
 
@@ -396,81 +389,8 @@
 
 
 
-    <g transform="translate(34, 206)" class="badge-pill">
-      <rect x="0" y="0" width="89.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#00f2fe" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#00f2fe"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#00f2fe" letter-spacing="0.5">
-        MERN STACK
-      </text>
-    </g>
-
-
-    <g transform="translate(133, 206)" class="badge-pill">
-      <rect x="0" y="0" width="82.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#818cf8" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#818cf8"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#818cf8" letter-spacing="0.5">
-        .NET CORE
-      </text>
-    </g>
-
-
-    <g transform="translate(225, 206)" class="badge-pill">
-      <rect x="0" y="0" width="128.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#38bdf8"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#38bdf8" letter-spacing="0.5">
-        PYTHON / FASTAPI
-      </text>
-    </g>
-
-
-    <g transform="translate(363, 206)" class="badge-pill">
-      <rect x="0" y="0" width="121.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#a855f7" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#a855f7"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#a855f7" letter-spacing="0.5">
-        AI AGENTS / RAG
-      </text>
-    </g>
-
-
-    <g transform="translate(494, 206)" class="badge-pill">
-      <rect x="0" y="0" width="147.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#f59e0b"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#f59e0b" letter-spacing="0.5">
-        SOCKET.IO REAL-TIME
-      </text>
-    </g>
-
-
-    <g transform="translate(651, 206)" class="badge-pill">
-      <rect x="0" y="0" width="128.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#10b981" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#10b981"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#10b981" letter-spacing="0.5">
-        POSTGRES &amp; MONGO
-      </text>
-    </g>
-
-
-    <g transform="translate(789, 206)" class="badge-pill">
-      <rect x="0" y="0" width="115.0" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#06b6d4"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#06b6d4" letter-spacing="0.5">
-        DOCKER &amp; CLOUD
-      </text>
-    </g>
-
-
-    <g transform="translate(914, 206)" class="badge-pill">
-      <rect x="0" y="0" width="95.5" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="#f43f5e" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="#f43f5e"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="#f43f5e" letter-spacing="0.5">
-        SPATIAL GIS
-      </text>
-    </g>
-
-
-
   <!-- SECTION DIVIDER WITH MOVING LIGHT PULSE -->
-  <g transform="translate(34, 246)">
+  <g transform="translate(34, 210)">
     <line x1="0" y1="0" x2="892" y2="0" stroke="#162238" stroke-width="1"/>
     <!-- Animated Light Runner on Divider -->
     <rect x="0" y="-1" width="160" height="2" fill="url(#scanlineGrad)">
@@ -487,7 +407,7 @@
 
 
   <!-- CARD 01: Agentex Platform -->
-  <g transform="translate(34, 268)" class="card-item">
+  <g transform="translate(34, 232)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/agentix-platform" href="https://github.com/saadali122gb/agentix-platform" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -586,7 +506,7 @@
 
 
   <!-- CARD 02: MoveOn CRM -->
-  <g transform="translate(490, 268)" class="card-item">
+  <g transform="translate(490, 232)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/CRM" href="https://github.com/saadali122gb/CRM" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -685,7 +605,7 @@
 
 
   <!-- CARD 03: Taxi Dispatcher -->
-  <g transform="translate(34, 414)" class="card-item">
+  <g transform="translate(34, 378)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Taxi-Dispatcher" href="https://github.com/saadali122gb/Taxi-Dispatcher" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -784,7 +704,7 @@
 
 
   <!-- CARD 04: Hexa AI -->
-  <g transform="translate(490, 414)" class="card-item">
+  <g transform="translate(490, 378)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Hexa-AI" href="https://github.com/saadali122gb/Hexa-AI" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -883,7 +803,7 @@
 
 
   <!-- CARD 05: MoveOn Resumator -->
-  <g transform="translate(34, 560)" class="card-item">
+  <g transform="translate(34, 524)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/MoveOn" href="https://github.com/saadali122gb/MoveOn" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -982,7 +902,7 @@
 
 
   <!-- CARD 06: Cora AI Assistant -->
-  <g transform="translate(490, 560)" class="card-item">
+  <g transform="translate(490, 524)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Cora-AI-Assisstant-By-MoveOn-AI" href="https://github.com/saadali122gb/Cora-AI-Assisstant-By-MoveOn-AI" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1081,7 +1001,7 @@
 
 
   <!-- CARD 07: Orion Dispatch -->
-  <g transform="translate(34, 706)" class="card-item">
+  <g transform="translate(34, 670)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Orion-Dispatch-Truck-Dispatch-" href="https://github.com/saadali122gb/Orion-Dispatch-Truck-Dispatch-" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1180,7 +1100,7 @@
 
 
   <!-- CARD 08: Rawana Cargo -->
-  <g transform="translate(490, 706)" class="card-item">
+  <g transform="translate(490, 670)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Rawana-Cargo-For-Truck-Logistics-" href="https://github.com/saadali122gb/Rawana-Cargo-For-Truck-Logistics-" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1279,7 +1199,7 @@
 
 
   <!-- CARD 09: Data Saver -->
-  <g transform="translate(34, 852)" class="card-item">
+  <g transform="translate(34, 816)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Data-Saver-By-Moveon-AI" href="https://github.com/saadali122gb/Data-Saver-By-Moveon-AI" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1378,7 +1298,7 @@
 
 
   <!-- CARD 10: Connector -->
-  <g transform="translate(490, 852)" class="card-item">
+  <g transform="translate(490, 816)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Connector-by-moveon" href="https://github.com/saadali122gb/Connector-by-moveon" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1477,7 +1397,7 @@
 
 
   <!-- CARD 11: FixGhar -->
-  <g transform="translate(34, 998)" class="card-item">
+  <g transform="translate(34, 962)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Service-Provider-Company-Fix-Ghar-" href="https://github.com/saadali122gb/Service-Provider-Company-Fix-Ghar-" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1576,7 +1496,7 @@
 
 
   <!-- CARD 12: FixGuard Security -->
-  <g transform="translate(490, 998)" class="card-item">
+  <g transform="translate(490, 962)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Fixguard-Security-LTD" href="https://github.com/saadali122gb/Fixguard-Security-LTD" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1675,7 +1595,7 @@
 
 
   <!-- CARD 13: Healthcare Entry -->
-  <g transform="translate(34, 1144)" class="card-item">
+  <g transform="translate(34, 1108)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Health-Care-Data-Entry-Software" href="https://github.com/saadali122gb/Health-Care-Data-Entry-Software" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1774,7 +1694,7 @@
 
 
   <!-- CARD 14: PC Antivirus -->
-  <g transform="translate(490, 1144)" class="card-item">
+  <g transform="translate(490, 1108)" class="card-item">
     <a xlink:href="https://github.com/saadali122gb/Anti-Virus-Software-For-PC" href="https://github.com/saadali122gb/Anti-Virus-Software-For-PC" target="_blank" rel="noopener noreferrer">
       <!-- Card Base Box (Semi-transparent glass) -->
       <rect class="card-box" x="0" y="0" width="436" height="130" rx="10" 
@@ -1874,7 +1794,7 @@
 
 
   <!-- FOOTER STATUS CONSOLE (Transparent) -->
-  <g transform="translate(34, 1286)">
+  <g transform="translate(34, 1250)">
     <rect x="0" y="0" width="892" height="36" rx="8" fill="#080c16" fill-opacity="0.8" stroke="#162238" stroke-width="1"/>
     
     <!-- Status Terminal Dot -->

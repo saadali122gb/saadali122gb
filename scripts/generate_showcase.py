@@ -215,22 +215,11 @@ PROJECTS = [
     }
 ]
 
-TECH_BADGES = [
-    ("MERN STACK", "#00f2fe"),
-    (".NET CORE", "#818cf8"),
-    ("PYTHON / FASTAPI", "#38bdf8"),
-    ("AI AGENTS / RAG", "#a855f7"),
-    ("SOCKET.IO REAL-TIME", "#f59e0b"),
-    ("POSTGRES & MONGO", "#10b981"),
-    ("DOCKER & CLOUD", "#06b6d4"),
-    ("SPATIAL GIS", "#f43f5e"),
-]
-
 svg_width = 960
 card_w = 436
 card_h = 130
 start_x = [34, 490]
-start_y = 268
+start_y = 232
 row_gap = 16
 svg_height = start_y + (7 * card_h) + (6 * row_gap) + 64
 
@@ -330,13 +319,6 @@ styles = '''
     .card-item:hover .action-btn {
       fill: #1e293b !important;
       stroke-opacity: 0.9 !important;
-    }
-    .badge-pill {
-      transition: all 0.25s ease;
-    }
-    .badge-pill:hover rect {
-      fill-opacity: 0.4 !important;
-      stroke-opacity: 0.8 !important;
     }
   </style>
 '''
@@ -479,29 +461,10 @@ graphical_section_svg = '''
   </g>
 '''
 
-# 2. MASTER TECHNOLOGY BADGES ROW
-badges_list_svg = []
-cur_bx = 34
-for b_name, b_col in TECH_BADGES:
-    bw = len(b_name) * 6.5 + 24
-    badge_str = f'''
-    <g transform="translate({cur_bx}, 206)" class="badge-pill">
-      <rect x="0" y="0" width="{bw}" height="24" rx="6" fill="#090e18" fill-opacity="0.8" stroke="{b_col}" stroke-opacity="0.3" stroke-width="0.9"/>
-      <circle cx="10" cy="12" r="2.5" fill="{b_col}"/>
-      <text x="18" y="15.5" class="font-mono" font-size="8.8" font-weight="700" fill="{b_col}" letter-spacing="0.5">
-        {escape(b_name)}
-      </text>
-    </g>
-'''
-    badges_list_svg.append(badge_str)
-    cur_bx += int(bw + 10)
-
-badges_row_svg = "\n".join(badges_list_svg)
-
-# 3. SECTION DIVIDER
+# 2. SECTION DIVIDER
 divider_svg = '''
   <!-- SECTION DIVIDER WITH MOVING LIGHT PULSE -->
-  <g transform="translate(34, 246)">
+  <g transform="translate(34, 210)">
     <line x1="0" y1="0" x2="892" y2="0" stroke="#162238" stroke-width="1"/>
     <!-- Animated Light Runner on Divider -->
     <rect x="0" y="-1" width="160" height="2" fill="url(#scanlineGrad)">
@@ -516,7 +479,7 @@ divider_svg = '''
   </g>
 '''
 
-# 4. ENHANCED 14 PROJECT CARDS
+# 3. ENHANCED 14 PROJECT CARDS
 cards_svg = []
 for p in PROJECTS:
     cx = start_x[p['col']]
@@ -630,7 +593,7 @@ for p in PROJECTS:
 
 cards_content = "\n".join(cards_svg)
 
-# 5. FOOTER BAR
+# 4. FOOTER BAR
 footer_y = svg_height - 52
 footer_svg = f'''
   <!-- FOOTER STATUS CONSOLE (Transparent) -->
@@ -670,7 +633,7 @@ scanline_svg = f'''
   </line>
 '''
 
-# ENTIRE SVG WITH FULLY TRANSPARENT BACKGROUND AND NO TOP PILL BAR
+# ENTIRE SVG WITH FULLY TRANSPARENT BACKGROUND
 full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
      viewBox="0 0 {svg_width} {svg_height}" width="100%" height="100%"
      style="background: transparent; text-rendering: geometricPrecision; shape-rendering: geometricPrecision;">
@@ -689,8 +652,6 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 {scanline_svg}
 
 {graphical_section_svg}
-
-{badges_row_svg}
 
 {divider_svg}
 
