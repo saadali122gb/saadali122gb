@@ -746,7 +746,7 @@ footer_svg = f'''
 
 scanline_svg = f'''
   <!-- Subtle Ambient Scanline traversing vertically -->
-  <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.16">
+  <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.16" pointer-events="none">
     <animate attributeName="y1" values="0;{svg_height};0" dur="10s" repeatCount="indefinite"/>
     <animate attributeName="y2" values="0;{svg_height};0" dur="10s" repeatCount="indefinite"/>
   </line>
@@ -763,10 +763,10 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 {styles}
 
   <!-- TRANSPARENT GRID PATTERN OVERLAY -->
-  <rect width="{svg_width}" height="{svg_height}" fill="url(#techGrid)"/>
+  <rect width="{svg_width}" height="{svg_height}" fill="url(#techGrid)" pointer-events="none"/>
 
   <!-- AMBIENT LIGHTING OVERLAYS -->
-  <rect width="{svg_width}" height="500" fill="url(#topGlow)"/>
+  <rect width="{svg_width}" height="500" fill="url(#topGlow)" pointer-events="none"/>
 
 {scanline_svg}
 

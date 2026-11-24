@@ -256,14 +256,14 @@
 
 
   <!-- TRANSPARENT GRID PATTERN OVERLAY -->
-  <rect width="960" height="1380" fill="url(#techGrid)"/>
+  <rect width="960" height="1380" fill="url(#techGrid)" pointer-events="none"/>
 
   <!-- AMBIENT LIGHTING OVERLAYS -->
-  <rect width="960" height="500" fill="url(#topGlow)"/>
+  <rect width="960" height="500" fill="url(#topGlow)" pointer-events="none"/>
 
 
   <!-- Subtle Ambient Scanline traversing vertically -->
-  <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.16">
+  <line x1="0" y1="0" x2="960" y2="0" stroke="url(#scanlineGrad)" stroke-width="1.2" opacity="0.16" pointer-events="none">
     <animate attributeName="y1" values="0;1380;0" dur="10s" repeatCount="indefinite"/>
     <animate attributeName="y2" values="0;1380;0" dur="10s" repeatCount="indefinite"/>
   </line>
