@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="916" height="940" viewBox="0 0 916 940">
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#111827" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="916" height="940" rx="18" fill="#05070c"/>
+  <rect width="916" height="940" rx="18" fill="url(#grid)" opacity="0.85"/>
+  
+  <a href="https://github.com/saadali122gb/agentix-platform" target="_blank">
+    <g transform="translate(16, 18)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.0s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#38bdf8">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.0s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Agentex Platform</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">RAG agents, guardrails & multi-user flow</text>
+      <text x="20" y="88" fill="#38bdf8" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/CRM" target="_blank">
+    <g transform="translate(470, 18)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#22c55e">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.14s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#22c55e">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.14s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.14s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">MoveOn CRM</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Lead routing, BANT pipeline & RBAC</text>
+      <text x="20" y="88" fill="#22c55e" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Taxi-Dispatcher" target="_blank">
+    <g transform="translate(16, 150)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#f59e0b">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.28s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#f59e0b">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.28s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.28s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Taxi Dispatcher</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Socket.io matching, routing & JWT auth</text>
+      <text x="20" y="88" fill="#f59e0b" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Hexa-AI" target="_blank">
+    <g transform="translate(470, 150)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#a855f7">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.42s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#a855f7">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.42s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.42s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Hexa AI</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Gmail OAuth 2.0 & AI outreach automation</text>
+      <text x="20" y="88" fill="#a855f7" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/MoveOn" target="_blank">
+    <g transform="translate(16, 282)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#ec4899">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.56s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#ec4899">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.56s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.56s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">MoveOn Resumator</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">ATS resume engine & Puppeteer PDFs</text>
+      <text x="20" y="88" fill="#ec4899" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Cora-AI-Assisstant-By-MoveOn-AI" target="_blank">
+    <g transform="translate(470, 282)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#06b6d4">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.7s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#06b6d4">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Cora AI Assistant</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Conversational AI & workflow automation</text>
+      <text x="20" y="88" fill="#06b6d4" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Orion-Dispatch-Truck-Dispatch-" target="_blank">
+    <g transform="translate(16, 414)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#eab308">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.84s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#eab308">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.84s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.84s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Orion Dispatch</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Truck dispatch, fleet & load scheduling</text>
+      <text x="20" y="88" fill="#eab308" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Rawana-Cargo-For-Truck-Logistics-" target="_blank">
+    <g transform="translate(470, 414)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#10b981">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="0.98s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#10b981">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="0.98s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="0.98s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Rawana Cargo</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Freight logistics & shipment tracking</text>
+      <text x="20" y="88" fill="#10b981" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Data-Saver-By-Moveon-AI" target="_blank">
+    <g transform="translate(16, 546)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#6366f1">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="1.12s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#6366f1">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="1.12s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="1.12s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Data Saver</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Chrome lead extractor & tracking tool</text>
+      <text x="20" y="88" fill="#6366f1" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Connector-by-moveon" target="_blank">
+    <g transform="translate(470, 546)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#f97316">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="1.26s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#f97316">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="1.26s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="1.26s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Connector</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">API bridge, webhooks & data pipelines</text>
+      <text x="20" y="88" fill="#f97316" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Service-Provider-Company-Fix-Ghar-" target="_blank">
+    <g transform="translate(16, 678)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#14b8a6">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#14b8a6">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">FixGhar</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Service marketplace & booking platform</text>
+      <text x="20" y="88" fill="#14b8a6" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Fixguard-Security-LTD" target="_blank">
+    <g transform="translate(470, 678)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#8b5cf6">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="1.54s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#8b5cf6">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="1.54s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="1.54s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">FixGuard Security</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Security ops & client management portal</text>
+      <text x="20" y="88" fill="#8b5cf6" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Health-Care-Data-Entry-Software" target="_blank">
+    <g transform="translate(16, 810)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#ef4444">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="1.68s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#ef4444">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="1.68s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="1.68s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Healthcare Entry</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">Medical records & structured data system</text>
+      <text x="20" y="88" fill="#ef4444" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+  <a href="https://github.com/saadali122gb/Anti-Virus-Software-For-PC" target="_blank">
+    <g transform="translate(470, 810)">
+      <rect width="430" height="112" rx="14" fill="#0b0f17" stroke="#1e293b" stroke-width="1.5"/>
+      <rect x="0" y="14" width="4" height="84" rx="2" fill="#84cc16">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" begin="1.82s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="408" cy="24" r="5" fill="#84cc16">
+        <animate attributeName="r" values="4;7;4" dur="2.2s" begin="1.82s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" begin="1.82s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="32" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">PC Antivirus</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5">System security & file scanner utility</text>
+      <text x="20" y="88" fill="#84cc16" font-family="monospace" font-size="11.5">github.com/saadali122gb -></text>
+    </g>
+  </a>
+</svg>
